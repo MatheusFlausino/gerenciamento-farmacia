@@ -1,2 +1,2 @@
-# gerenciamento-farmacia
+# Gerenciamento Farmacia
 Gerenciamento de Farmácia, projeto realizado na disciplina de Engenharia de Software na Universidade Tecnológica Federal do Paraná, campus Cornélio Procópio (UTFPR-CP)
