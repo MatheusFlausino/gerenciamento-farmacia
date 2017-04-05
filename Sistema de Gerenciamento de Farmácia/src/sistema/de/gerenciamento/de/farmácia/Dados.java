@@ -1,18 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Classe de Conexao com os Dados
  */
 package sistema.de.gerenciamento.de.farmácia;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;  
+import java.sql.DriverManager;   
 
 /**
  *
- * @author pedro
+ * @author Pedro e Matheus
  */
 public class Dados {
-    static public List <Cliente> listaCliente = new ArrayList ();
-    static public List <Fornecedor> listaFornecedor = new ArrayList ();
+   private static final String URL = "jdbc:mysql://mysql.hostinger.com.br";
+  
+    public Connection conexao(String nome , String senha) throws Exception {
+        try{
+            return DriverManager.getConnection(URL, nome, senha);
+        } catch (Exception e) {
+            throw new Exception("Erro de conexão com banco");
+        }
+    }
 }
