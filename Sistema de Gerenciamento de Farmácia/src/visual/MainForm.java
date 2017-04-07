@@ -165,7 +165,7 @@ public class MainForm extends javax.swing.JFrame {
         formFornecedor form;
         try {
             form = new formFornecedor();
-            form.ID = true;
+            form.setCodigo(true);
             form.setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);

@@ -56,7 +56,7 @@ public class Fornecedor implements Serializable {
         if(cnpjFornecedor.length() == 14)
             this.cnpjFornecedor = cnpjFornecedor;
         else
-            throw new Exception("CPF Invalido");
+            throw new Exception("CNPJ Invalido");
     }
 
     public String getCepFornecedor() {

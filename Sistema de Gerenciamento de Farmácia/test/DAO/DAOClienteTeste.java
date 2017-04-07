@@ -27,7 +27,7 @@ public class DAOClienteTeste {
         String data = "21/02/2010";
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
       
-        novoCliente.setIdCliente(2);
+        novoCliente.setIdCliente(1);
         novoCliente.setNomeCliente("Fulano pra teste");
         novoCliente.setCpfCliente("462.369.456-09");
         novoCliente.setCepCliente("86300-000");
@@ -110,7 +110,7 @@ public class DAOClienteTeste {
     public void testeBucarClienteInvalido() throws Exception {
         DAOCliente daoCliente = new DAOCliente();
 
-        Cliente busca = daoCliente.buscar(2);
+        Cliente busca = daoCliente.buscar(99);
         assertNull(busca);
     }
 

@@ -9,7 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,8 +74,11 @@ public class DAOCliente {
                   temp.setNumeroCliente(rs.getInt("numero"));
                   
                   resultados.add(temp);
-              }}
-         return resultados;  
+              }
+        }catch (Exception e) {  
+            throw new Exception("Erro no stmt");  
+        }
+        return resultados;  
       } catch (Exception e) {  
          throw new Exception("Erro ao buscar Cliente 1");  
       }  

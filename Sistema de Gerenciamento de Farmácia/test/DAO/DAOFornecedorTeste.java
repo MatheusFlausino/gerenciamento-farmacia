@@ -5,9 +5,6 @@
  */
 package DAO;
 
-import java.text.SimpleDateFormat;
-import java.sql.Date;
-import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import sistema.de.gerenciamento.de.farmácia.Fornecedor;
@@ -20,15 +17,15 @@ import sistema.de.gerenciamento.de.farmácia.DAOFornecedor;
  */
 public class DAOFornecedorTeste {
     
-    //Teste Valido Inserir Cliente
+    //Teste Valido Inserir Fornecedor
     @Test
-    public void testeInserirClienteValido() throws Exception {
+    public void testeInserirFornecedorValido() throws Exception {
         Fornecedor novoFornecedor = new Fornecedor();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
       
         novoFornecedor.setIdFornecedor(1);
         novoFornecedor.setNomeFornecedor("Fulano pra teste");
-        novoFornecedor.setCnpjFornecedor("462.369.456-09");
+        novoFornecedor.setCnpjFornecedor("72.223.484/0001-49");
         novoFornecedor.setCepFornecedor("86300-000");
         novoFornecedor.setBairroFornecedor("Centro");
         novoFornecedor.setCidadeFornecedor("Cornélio Procópio");
@@ -40,13 +37,13 @@ public class DAOFornecedorTeste {
                 
         assertTrue(daoFornecedor.insere(novoFornecedor));
     }
-    //Teste Invalido Inserir Cliente
+    //Teste Invalido Inserir Fornecedor
     @Test
-    public void testeInserirClienteInvalido() throws Exception {
+    public void testeInserirFornecedorInvalido() throws Exception {
         Fornecedor novoFornecedor = new Fornecedor();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
         
-        String expResult = "Erro ao inserir Cliente";
+        String expResult = "Erro ao inserir Fornecedor";
         try{
             boolean insert = daoFornecedor.insere(novoFornecedor);
             fail();
@@ -55,15 +52,15 @@ public class DAOFornecedorTeste {
         }
     }
     
-    //Teste Valido Atualizar Cliente
+    //Teste Valido Atualizar Fornecedor
     @Test
-    public void testeAtualizarClienteValido() throws Exception {
+    public void testeAtualizarFornecedorValido() throws Exception {
         Fornecedor novoFornecedor = new Fornecedor();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
       
         novoFornecedor.setIdFornecedor(0);
         novoFornecedor.setNomeFornecedor("Fulano pra teste");
-        novoFornecedor.setCnpjFornecedor("462.000.456-09");
+        novoFornecedor.setCnpjFornecedor("72.223.484/0001-49");
         novoFornecedor.setCepFornecedor("86300-000");
         novoFornecedor.setBairroFornecedor("Centro");
         novoFornecedor.setCidadeFornecedor("Cornélio Procópio");
@@ -76,13 +73,13 @@ public class DAOFornecedorTeste {
         assertTrue(daoFornecedor.atualizar(novoFornecedor));
     }
     
-    //Teste Invalido Atualizar Cliente
+    //Teste Invalido Atualizar Fornecedor
     @Test
-    public void testeAtualizarClienteInvalido() throws Exception {
+    public void testeAtualizarFornecedorInvalido() throws Exception {
         Fornecedor novoFornecedor = new Fornecedor();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
         
-        String expResult = "Erro ao inserir Cliente";
+        String expResult = "Erro ao inserir Fornecedor";
         
         try{
             boolean atualizar = daoFornecedor.insere(novoFornecedor);
@@ -92,9 +89,9 @@ public class DAOFornecedorTeste {
         }
     }
     
-    //Teste Valido Buscar Cliente
+    //Teste Valido Buscar Fornecedor
     @Test
-    public void testeBucarClienteValido() throws Exception {
+    public void testeBucarFornecedorValido() throws Exception {
         Fornecedor novoFornecedor = new Fornecedor();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
 
@@ -102,13 +99,14 @@ public class DAOFornecedorTeste {
         assertNotNull(busca);
     }
     
-    //Teste Invalido Buscar Cliente
+    //Teste Invalido Buscar Fornecedor
     @Test
-    public void testeBucarClienteInvalido() throws Exception {
+    public void testeBucarFornecedorInvalido() throws Exception {
         Fornecedor novoFornecedor = new Fornecedor();
         DAOFornecedor daoFornecedor = new DAOFornecedor();
 
         Fornecedor busca = daoFornecedor.buscar(2);
+        System.out.print(busca);
         assertNull(busca);
     }
 

@@ -20,7 +20,6 @@ import sistema.de.gerenciamento.de.farmácia.DAOFornecedor;
  * @author mathe_56ugtvf
  */
 public final class formFornecedor extends javax.swing.JFrame {
-    public boolean ID = false;
     /**
      * Creates new form formFornecedor
      * @throws java.lang.Exception
@@ -28,7 +27,6 @@ public final class formFornecedor extends javax.swing.JFrame {
     public formFornecedor() throws Exception {
         initComponents();
         resetText();
-        setCodigo(ID);
     }
 
     /**
@@ -121,7 +119,11 @@ public final class formFornecedor extends javax.swing.JFrame {
         jLabel11.setLabelFor(telefoneFornecedor);
         jLabel11.setText("Telefone");
 
-        telefoneFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("(##) #####-####"))));
+        try {
+            telefoneFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel12.setLabelFor(cpfFornecedor);
         jLabel12.setText("CPF");
@@ -311,6 +313,7 @@ public final class formFornecedor extends javax.swing.JFrame {
         try {
             Fornecedor novoFornecedor = getFornecedor();
             daoFornecedor.atualizar(novoFornecedor);
+            imprimeMsg("Fornecedor Atualizado com Sucesso");
         } catch (Exception ex) {
             System.out.print("Erro ao Atualizar: "+ ex.getMessage());
         }
@@ -322,6 +325,7 @@ public final class formFornecedor extends javax.swing.JFrame {
         try {
             Fornecedor novoFornecedor = getFornecedor();
             daoFornecedor.apagar(novoFornecedor.getIdFornecedor());
+            imprimeMsg("Fornecedor Excluido com Sucesso");
         } catch (Exception ex) {
             System.out.print("Erro ao Atualizar: "+ ex.getMessage());
         }
@@ -333,7 +337,8 @@ public final class formFornecedor extends javax.swing.JFrame {
         DAOFornecedor daoFornecedor = new DAOFornecedor();
         try {
             novoFornecedor = getFornecedor();
-            daoFornecedor.atualizar(novoFornecedor);
+            daoFornecedor.insere(novoFornecedor);
+            imprimeMsg("Fornecedor Salvo com Sucesso");
         } catch (Exception ex) {
             System.out.print("Erro ao Salvar: "+ ex.getMessage());
         }

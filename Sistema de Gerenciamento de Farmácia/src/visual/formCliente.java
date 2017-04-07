@@ -9,8 +9,6 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import sistema.de.gerenciamento.de.farmácia.Cliente;
 import sistema.de.gerenciamento.de.farmácia.DAOCliente;
@@ -111,7 +109,11 @@ public final class formCliente extends javax.swing.JFrame {
         jLabel9.setLabelFor(dataNascCliente);
         jLabel9.setText("Data Nasc.");
 
-        dataNascCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        try {
+            dataNascCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel10.setLabelFor(cepCliente);
         jLabel10.setText("CEP");
@@ -125,7 +127,11 @@ public final class formCliente extends javax.swing.JFrame {
         jLabel11.setLabelFor(telefoneCliente);
         jLabel11.setText("Telefone");
 
-        telefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("(##) #####-####"))));
+        try {
+            telefoneCliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel12.setLabelFor(cpfCliente);
         jLabel12.setText("CPF");
@@ -321,6 +327,7 @@ public final class formCliente extends javax.swing.JFrame {
         try {
             Cliente novoCliente = getCliente();
             daoCliente.atualizar(novoCliente);
+            imprimeMsg("Cliente Atualizado com Sucesso");
         } catch (Exception ex) {
             System.out.print("Erro ao Atualizar: "+ ex.getMessage());
         }
@@ -332,6 +339,7 @@ public final class formCliente extends javax.swing.JFrame {
         try {
             Cliente novoCliente = getCliente();
             daoCliente.apagar(novoCliente.getIdCliente());
+            imprimeMsg("Cliente Excluido com Sucesso");
         } catch (Exception ex) {
             System.out.print("Erro ao Atualizar: "+ ex.getMessage());
         }
@@ -343,7 +351,8 @@ public final class formCliente extends javax.swing.JFrame {
         DAOCliente daoCliente = new DAOCliente();
         try {
             novoCliente = getCliente();
-            daoCliente.atualizar(novoCliente);
+            daoCliente.insere(novoCliente);
+            imprimeMsg("Cliente Salvo com Sucesso");
         } catch (Exception ex) {
             System.out.print("Erro ao Salvar: "+ ex.getMessage());
         }
@@ -437,6 +446,7 @@ public final class formCliente extends javax.swing.JFrame {
         novoCliente.setBairroCliente(bairroCliente.getText());
         novoCliente.setCidadeCliente(cidadeCliente.getText());
         novoCliente.setComplementoCliente(complementoCliente.getText());
+        System.out.print(dataNascCliente.getText());
         novoCliente.setDataNascCliente(new Date(format.parse(dataNascCliente.getText()).getTime()));
         novoCliente.setLogradouroCliente(logradouroCliente.getText());
         novoCliente.setEstadoCliente(estadoCliente.getText());

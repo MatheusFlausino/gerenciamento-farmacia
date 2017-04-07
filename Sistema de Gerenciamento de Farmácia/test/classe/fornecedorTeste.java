@@ -3,9 +3,6 @@
  */
 package classe;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import sistema.de.gerenciamento.de.farmácia.Fornecedor;
@@ -83,7 +80,7 @@ public class fornecedorTeste {
     @Test
     public void testeCNPJFornecedorInvalido1() throws Exception {
         Fornecedor cliente = new Fornecedor();
-        String expResult = "CPF Invalido";
+        String expResult = "CNPJ Invalido";
         try {
             cliente.setCnpjFornecedor("76.333.171/0001");
             String valorRecebido = cliente.getCnpjFornecedor();
@@ -96,7 +93,7 @@ public class fornecedorTeste {
     @Test
     public void testeCNPJFornecedorInvalido2() throws Exception {
         Fornecedor cliente = new Fornecedor();
-        String expResult = "CPF Invalido";
+        String expResult = "CNPJ Invalido";
         try {
             cliente.setCnpjFornecedor("76.333.171/0001-022");
             String valorRecebido = cliente.getCnpjFornecedor();
@@ -109,7 +106,7 @@ public class fornecedorTeste {
     @Test
     public void testeCNPJFornecedorInvalido3() throws Exception {
         Fornecedor cliente = new Fornecedor();
-        String expResult = "CPF Invalido";
+        String expResult = "CNPJ Invalido";
         try {
             cliente.setCnpjFornecedor("");
             String valorRecebido = cliente.getCnpjFornecedor();

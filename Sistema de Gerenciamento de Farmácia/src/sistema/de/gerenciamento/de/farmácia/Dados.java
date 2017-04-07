@@ -18,7 +18,7 @@ public class Dados {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(URL, nome, senha);
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
             throw new Exception("Erro de conexão com banco");
         }
     }

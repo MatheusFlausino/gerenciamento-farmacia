@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;  
 import java.util.ArrayList;  
   
-import javax.swing.JOptionPane;  
 
 /**
  *
@@ -78,11 +77,11 @@ public class DAOFornecedor {
       }  
    }  
   
-   public Fornecedor buscar(int id) throws Exception {    
-      Fornecedor resultados = new Fornecedor();   
+   public Fornecedor buscar(int id) throws Exception { 
+      Fornecedor resultados = null;   
       try {
          conectar();
-         PreparedStatement stmt = con.prepareStatement("SELECT * FROM pessoa WHERE id LIKE ?");
+         PreparedStatement stmt = con.prepareStatement("SELECT * FROM fornecedor WHERE id LIKE ? LIMIT 1");
          stmt.setInt(1, id);
          ResultSet rs = stmt.executeQuery();
          while (rs.next()) {  
@@ -109,9 +108,10 @@ public class DAOFornecedor {
    }  
   
    public boolean insere(Fornecedor pessoaFornecedor) throws Exception{    
-      try {
+        boolean retorno = false;
+       try {
         conectar();
-        String sql = "INSERT INTO fornecedores"+
+        String sql = "INSERT INTO fornecedor"+
                  "(id, nome, cnpj, cidade, estado, cep, bairro, logradouro, telefone, complemento, numero)"+
                  "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
           try (PreparedStatement stmt = con.prepareStatement(sql)) {
@@ -130,12 +130,13 @@ public class DAOFornecedor {
               stmt.close();
           }
         System.out.println("Inserida!"); 
-        return true;
+        retorno = true;
       } catch (Exception e) {  
          throw new Exception("Erro ao inserir Fornecedor");  
       } finally {  
          fechar();  
       }  
+    return retorno;
    }
    
     public boolean atualizar(Fornecedor pessoaFornecedor) throws Exception {   
