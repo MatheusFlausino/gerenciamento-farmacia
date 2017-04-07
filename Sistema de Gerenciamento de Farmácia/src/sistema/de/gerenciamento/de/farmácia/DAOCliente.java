@@ -34,10 +34,10 @@ import javax.swing.JOptionPane;
 public class DAOCliente {
   
    private Connection con = null;
-   private static final String NOME = "u597091211_eng ", 
-                               SENHA = "Engenharia1"; 
+   private static final String NOME = "sql10167525", 
+                               SENHA = "bztR3vrtfT"; 
   
-   public void apagar(int id) {  
+   public void apagar(int id) throws Exception {  
       try { 
         conectar();  
           try (PreparedStatement stmt = con.prepareStatement("DELETE FROM cliente WHERE id = ?")) {
@@ -46,7 +46,7 @@ public class DAOCliente {
               stmt.close();
           }
       } catch (Exception e) {  
-        imprimeErro("Erro ao apagar pessoas", e.getMessage());  
+        throw new Exception("Erro ao apagar Cliente");  
       } finally {  
          fechar();  
       }  
@@ -78,17 +78,16 @@ public class DAOCliente {
               }}
          return resultados;  
       } catch (Exception e) {  
-         imprimeErro("Erro ao buscar pessoas", e.getMessage());  
-         return null;  
+         throw new Exception("Erro ao buscar Cliente 1");  
       }  
    }  
   
-   public ArrayList<Cliente> buscar(String id) throws Exception {  
-        ArrayList<Cliente> resultados = new ArrayList<>();  
+   public Cliente buscar(int id) throws Exception {  
+        Cliente resultados = null;  
         try {  
             conectar();  
-            try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM cliente WHERE id LIKE ?")) {
-                stmt.setString(1, id);
+            try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM cliente WHERE id LIKE ? LIMIT 1")) {
+                stmt.setInt(1, id);
                 ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
                     Cliente temp = new Cliente();
@@ -104,19 +103,19 @@ public class DAOCliente {
                     temp.setLogradouroCliente(rs.getString("logradouro"));
                     temp.setTelefoneCliente(rs.getString("telefone"));
                     temp.setComplementoCliente(rs.getString("complemento"));
-                    temp.setNumeroCliente(rs.getInt("numero"));
-                    resultados.add(temp);  
+                    temp.setNumeroCliente(rs.getInt("numero")); 
+                    resultados = temp;
                 }
             }
             return resultados;  
         } catch (Exception e) {  
-           imprimeErro("Erro ao buscar pessoa", e.getMessage());  
-           return null;  
+           throw new Exception("Erro ao buscar Cliente");  
         }
    }  
   
-    public void insere(Cliente pessoaCliente){  
-        String sql = "INSERT INTO  Cliente ( nome, datanasc, cpf, cidade, estado, cep, bairro, logradouro, telefone, complemento, numero, id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+    public boolean insere(Cliente pessoaCliente) throws Exception{ 
+        boolean retorno = false;
+        String sql = "INSERT INTO cliente ( nome, cpf, datanasc, cidade, estado, cep, bairro, logradouro, telefone, complemento, numero, id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {  
             conectar();
@@ -136,17 +135,19 @@ public class DAOCliente {
                 stmt.execute();
                 stmt.close();
             }
-           System.out.println("Inserida!");  
+           System.out.println("Inserida!");
+           retorno = true;
         } catch (Exception e) {  
-           imprimeErro("Erro ao inserir Cliente", e.getMessage());  
+           throw new Exception("Erro ao inserir Cliente");  
         } finally {  
            fechar();  
         }  
+       return retorno;
     }
    
-    public void atualizar(Cliente pessoaCliente) {  
-       String sql = "UPDATE fornecedor SET nome = ?, cpf = ?, datanasc = ? cidade = ?, estado = ?, cep = ?, "
-                + "bairro =?, logradouro = ?, telefone = ?, complemento = ?, numero =? WHERE  id = ?";
+    public boolean atualizar(Cliente pessoaCliente) throws Exception {
+       boolean retorno = false;
+       String sql = "UPDATE cliente SET nome = ?, cpf = ?, datanasc = ? cidade = ?, estado = ?, cep = ?, bairro = ?, logradouro = ?, telefone = ?, complemento = ?, numero = ? WHERE  id = ?";
         try { 
             conectar();
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
@@ -166,11 +167,13 @@ public class DAOCliente {
                 stmt.close();
             }
             System.out.println("Atualizada!");
+            retorno = true;
         } catch (Exception e) { 
-          imprimeErro("Erro ao fechar conexão", e.getMessage());  
+          throw new Exception("Erro ao Atualizar");  
         } finally {  
           fechar();  
-        }  
+        }
+        return retorno;
     }  
      
     private void conectar() throws Exception {  
@@ -178,19 +181,12 @@ public class DAOCliente {
            System.out.println("Conectado!");   
     }  
   
-    private void fechar() {  
-        try { 
+    private void fechar() throws Exception {  
+        try{ 
            con.close();  
            System.out.println("Conexão Fechada");  
         } catch (SQLException e) {  
-           imprimeErro("Erro ao fechar conexão", e.getMessage());  
+           throw new Exception("Erro ao fechar conexão");  
         }  
-    }  
-
-    private void imprimeErro(String msg, String msgErro) {  
-        JOptionPane.showMessageDialog(null, msg, "Erro crítico", 0);  
-        System.err.println(msg);  
-        System.out.println(msgErro);  
-        System.exit(0);  
     }  
 }

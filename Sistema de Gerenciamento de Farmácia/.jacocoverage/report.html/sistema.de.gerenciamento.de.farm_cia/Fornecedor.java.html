@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Fornecedor.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Sistema_de_Gerenciamento_de_Farm_cia&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sistema.de.gerenciamento.de.farmácia</a> &gt; <span class="el_source">Fornecedor.java</span></div><h1>Fornecedor.java</h1><pre class="source lang-java linenums">/*
+    Classe com os principais dados dos Fornecedores
+ */
+package sistema.de.gerenciamento.de.farmácia;
+
+import java.io.Serializable;
+
+/**
+ *
+ * @author pedro
+ */
+public class Fornecedor implements Serializable {
+
+    private String nomeFornecedor;
+    private int idFornecedor;
+    private String cnpjFornecedor;
+    private String cepFornecedor;
+    private String logradouroFornecedor;
+    private String complementoFornecedor;
+    private int numeroFornecedor;
+    private String bairroFornecedor;
+    private String cidadeFornecedor;
+    private String estadoFornecedor;
+    private String telefoneFornecedor;
+
+    public String getNomeFornecedor() {
+<span class="nc" id="L27">        return nomeFornecedor;</span>
+    }
+
+    public void setNomeFornecedor(String nomeFornecedor) throws Exception {
+<span class="nc bnc" id="L31" title="All 2 branches missed.">        if(nomeFornecedor.isEmpty())</span>
+<span class="nc" id="L32">            throw new Exception(&quot;Nome Invalido&quot;);</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">        else if(nomeFornecedor.length() &lt; 45)</span>
+<span class="nc" id="L34">            this.nomeFornecedor = nomeFornecedor;</span>
+        else
+<span class="nc" id="L36">            throw new Exception(&quot;Nome maior que 45 caracteres&quot;); </span>
+<span class="nc" id="L37">    }</span>
+
+    public int getIdFornecedor() {
+<span class="nc" id="L40">        return idFornecedor;</span>
+    }
+
+    public void setIdFornecedor(int idFornecedor)  throws Exception{
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (idFornecedor&gt;=0)</span>
+<span class="nc" id="L45">            this.idFornecedor = idFornecedor;</span>
+        else
+<span class="nc" id="L47">            throw new Exception(&quot;ID Invalido&quot;);</span>
+<span class="nc" id="L48">    }</span>
+
+    public String getCnpjFornecedor() {
+<span class="nc" id="L51">        return cnpjFornecedor;</span>
+    }
+
+    public void setCnpjFornecedor(String cnpjFornecedor) throws Exception{
+<span class="nc" id="L55">        cnpjFornecedor = cnpjFornecedor.replaceAll(&quot;\\D+&quot;,&quot;&quot;);</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if(cnpjFornecedor.length() == 14)</span>
+<span class="nc" id="L57">            this.cnpjFornecedor = cnpjFornecedor;</span>
+        else
+<span class="nc" id="L59">            throw new Exception(&quot;CPF Invalido&quot;);</span>
+<span class="nc" id="L60">    }</span>
+
+    public String getCepFornecedor() {
+<span class="nc" id="L63">        return cepFornecedor;</span>
+    }
+
+    public void setCepFornecedor(String cepFornecedor) throws Exception{
+<span class="nc" id="L67">        cepFornecedor = cepFornecedor.replaceAll(&quot;\\D+&quot;,&quot;&quot;);</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">        if(cepFornecedor.length() == 8)</span>
+<span class="nc" id="L69">            this.cepFornecedor = cepFornecedor;</span>
+        else
+<span class="nc" id="L71">            throw new Exception(&quot;CEP Invalido&quot;);</span>
+<span class="nc" id="L72">    }</span>
+
+    public String getLogradouroFornecedor() {
+<span class="nc" id="L75">        return logradouroFornecedor;</span>
+    }
+
+    public void setLogradouroFornecedor(String logradouroFornecedor) throws Exception{
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if(logradouroFornecedor.isEmpty())</span>
+<span class="nc" id="L80">            throw new Exception(&quot;Logradouro Invalido&quot;);</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        else if(logradouroFornecedor.length() &lt; 45)</span>
+<span class="nc" id="L82">            this.logradouroFornecedor = logradouroFornecedor;</span>
+        else
+<span class="nc" id="L84">            throw new Exception(&quot;Logradouro maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L85">    }</span>
+
+    public int getNumeroFornecedor() {
+<span class="nc" id="L88">        return numeroFornecedor;</span>
+    }
+
+    public void setNumeroFornecedor(int numeroFornecedor) throws Exception {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">        if(numeroFornecedor &gt; 0)</span>
+<span class="nc" id="L93">            this.numeroFornecedor = numeroFornecedor;</span>
+        else
+<span class="nc" id="L95">            throw new Exception(&quot;Numero Invalido&quot;);</span>
+<span class="nc" id="L96">    }</span>
+
+    public String getBairroFornecedor() {
+<span class="nc" id="L99">        return bairroFornecedor;</span>
+    }
+
+    public void setBairroFornecedor(String bairroFornecedor) throws Exception {
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if(bairroFornecedor.isEmpty())</span>
+<span class="nc" id="L104">            throw new Exception(&quot;Bairro Invalido&quot;);</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">        else if(bairroFornecedor.length() &lt; 45)</span>
+<span class="nc" id="L106">            this.bairroFornecedor = bairroFornecedor;</span>
+        else
+<span class="nc" id="L108">            throw new Exception(&quot;Bairro maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L109">    }</span>
+    
+     public String getEstadoFornecedor() {
+<span class="nc" id="L112">        return estadoFornecedor;</span>
+    }
+
+    public void setEstadoFornecedor(String estadoFornecedor) throws Exception {
+<span class="nc bnc" id="L116" title="All 2 branches missed.">        if(estadoFornecedor.isEmpty())</span>
+<span class="nc" id="L117">            throw new Exception(&quot;Estado Invalido&quot;);</span>
+<span class="nc bnc" id="L118" title="All 2 branches missed.">        else if(estadoFornecedor.length() &lt; 45)</span>
+<span class="nc" id="L119">            this.estadoFornecedor = estadoFornecedor;</span>
+        else
+<span class="nc" id="L121">            throw new Exception(&quot;Estado maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L122">    }</span>
+    
+    public String getCidadeFornecedor() {
+<span class="nc" id="L125">        return cidadeFornecedor;</span>
+    }
+
+    public void setCidadeFornecedor(String cidadeFornecedor) throws Exception {
+<span class="nc bnc" id="L129" title="All 2 branches missed.">        if(cidadeFornecedor.isEmpty())</span>
+<span class="nc" id="L130">            throw new Exception(&quot;Cidade Invalida&quot;);</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">        else if(cidadeFornecedor.length() &lt; 45)</span>
+<span class="nc" id="L132">            this.cidadeFornecedor = cidadeFornecedor;</span>
+        else
+<span class="nc" id="L134">            throw new Exception(&quot;Cidade maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L135">    }</span>
+
+    public String getComplementoFornecedor() {
+<span class="nc" id="L138">        return complementoFornecedor;</span>
+    }
+
+    public void setComplementoFornecedor(String complementoFornecedor) {
+<span class="nc" id="L142">        this.complementoFornecedor = complementoFornecedor;</span>
+<span class="nc" id="L143">    }</span>
+    
+    public String getTelefoneFornecedor() {
+<span class="nc" id="L146">        return telefoneFornecedor;</span>
+    }
+    
+    public void setTelefoneFornecedor(String telefoneFornecedor)throws Exception{
+<span class="nc" id="L150">        telefoneFornecedor = telefoneFornecedor.replaceAll(&quot;\\D+&quot;,&quot;&quot;);</span>
+<span class="nc bnc" id="L151" title="All 4 branches missed.">        if((telefoneFornecedor.length() == 10) || (telefoneFornecedor.length() == 11))</span>
+<span class="nc" id="L152">            this.telefoneFornecedor = telefoneFornecedor;</span>
+        else
+<span class="nc" id="L154">            throw new Exception(&quot;Telefone Invalido&quot;);</span>
+<span class="nc" id="L155">    }</span>
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L159">        int hash = 3;</span>
+<span class="nc" id="L160">        hash = 97 * hash + this.idFornecedor;</span>
+<span class="nc" id="L161">        return hash;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="nc bnc" id="L166" title="All 2 branches missed.">        if (this == obj) {</span>
+<span class="nc" id="L167">            return true;</span>
+        }
+<span class="nc bnc" id="L169" title="All 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L170">            return false;</span>
+        }
+<span class="nc bnc" id="L172" title="All 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L173">            return false;</span>
+        }
+<span class="nc" id="L175">        final Fornecedor other = (Fornecedor) obj;</span>
+<span class="nc bnc" id="L176" title="All 2 branches missed.">        if (this.idFornecedor != other.idFornecedor) {</span>
+<span class="nc" id="L177">            return false;</span>
+        }
+<span class="nc" id="L179">        return true;</span>
+    }
+
+<span class="nc" id="L182">    public Fornecedor() {</span>
+<span class="nc" id="L183">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

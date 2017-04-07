@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Cliente.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Sistema_de_Gerenciamento_de_Farm_cia&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sistema.de.gerenciamento.de.farmácia</a> &gt; <span class="el_source">Cliente.java</span></div><h1>Cliente.java</h1><pre class="source lang-java linenums">/*
+    Classe com os principais dados dos clientes
+ */
+package sistema.de.gerenciamento.de.farmácia;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * @author pedro
+ *
+ */
+public class Cliente implements Serializable {
+
+    private String nomeCliente;
+    private int idCliente;
+    private String cpfCliente;
+    private Date dataNascCliente;
+    private String cepCLiente;
+    private String logradouroCLiente;
+    private int numeroCliente;
+    private String bairroCliente;
+    private String cidadeCliente;
+    private String complementoCliente;
+    private String estadoCliente;
+    private String telefoneCliente;
+
+<span class="nc" id="L28">    public Cliente() {</span>
+<span class="nc" id="L29">    }</span>
+
+    public String getNomeCliente() {
+<span class="nc" id="L32">        return nomeCliente;</span>
+    }
+
+    public void setNomeCliente(String nomeCliente) throws Exception {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if(nomeCliente.isEmpty())</span>
+<span class="nc" id="L37">            throw new Exception(&quot;Nome Invalido&quot;);</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        else if(nomeCliente.length() &lt; 45)</span>
+<span class="nc" id="L39">            this.nomeCliente = nomeCliente;</span>
+        else
+<span class="nc" id="L41">            throw new Exception(&quot;Nome maior que 45 caracteres&quot;); </span>
+<span class="nc" id="L42">    }</span>
+
+    public int getIdCliente() {
+<span class="nc" id="L45">        return idCliente;</span>
+    }
+
+    public void setIdCliente(int idCliente) throws Exception {
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        if(idCliente &gt;= 0){</span>
+<span class="nc" id="L50">            this.idCliente = idCliente;</span>
+        }else{
+<span class="nc" id="L52">            throw new Exception(&quot;ID Invalido&quot;);</span>
+        }
+<span class="nc" id="L54">    }</span>
+
+    public String getCpfCliente() {
+<span class="nc" id="L57">        return cpfCliente;</span>
+    }
+
+    public void setCpfCliente(String cpfCliente) throws Exception {
+<span class="nc" id="L61">        cpfCliente = cpfCliente.replaceAll(&quot;\\D+&quot;,&quot;&quot;);</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if(cpfCliente.length() == 11)</span>
+<span class="nc" id="L63">            this.cpfCliente = cpfCliente;</span>
+        else
+<span class="nc" id="L65">            throw new Exception(&quot;CPF Invalido&quot;);</span>
+<span class="nc" id="L66">    }</span>
+
+    public Date getDataNascCliente() {
+<span class="nc" id="L69">        return dataNascCliente;</span>
+    }
+
+    public void setDataNascCliente(Date dataNascCliente) throws Exception {
+<span class="nc" id="L73">        Date dt = new Date();</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if(dataNascCliente.after(dt))</span>
+<span class="nc" id="L75">            throw new Exception(&quot;Data Invalida&quot;);</span>
+        else
+<span class="nc" id="L77">            this.dataNascCliente = dataNascCliente;</span>
+<span class="nc" id="L78">    }</span>
+
+    public String getCepCliente() {
+<span class="nc" id="L81">        return cepCLiente;</span>
+    }
+
+    public void setCepCliente(String cepCLiente) throws Exception{
+<span class="nc" id="L85">        cepCLiente = cepCLiente.replaceAll(&quot;\\D+&quot;,&quot;&quot;);</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        if(cepCLiente.length() == 8)</span>
+<span class="nc" id="L87">            this.cepCLiente = cepCLiente;</span>
+        else
+<span class="nc" id="L89">            throw new Exception(&quot;CEP Invalido&quot;);</span>
+<span class="nc" id="L90">    }</span>
+
+    public String getLogradouroCliente() {
+<span class="nc" id="L93">        return logradouroCLiente;</span>
+    }
+
+    public void setLogradouroCliente(String logradouroCLiente) throws Exception {
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        if(logradouroCLiente.isEmpty())</span>
+<span class="nc" id="L98">            throw new Exception(&quot;Logradouro Invalido&quot;);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">        else if(logradouroCLiente.length() &lt; 45)</span>
+<span class="nc" id="L100">            this.logradouroCLiente = logradouroCLiente;</span>
+        else
+<span class="nc" id="L102">            throw new Exception(&quot;Logradouro maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L103">    }</span>
+
+    public int getNumeroCliente() {
+<span class="nc" id="L106">        return numeroCliente;</span>
+    }
+
+    public void setNumeroCliente(int numeroCliente) throws Exception {
+<span class="nc bnc" id="L110" title="All 2 branches missed.">        if(numeroCliente &gt; 0)</span>
+<span class="nc" id="L111">            this.numeroCliente = numeroCliente;</span>
+        else
+<span class="nc" id="L113">            throw new Exception(&quot;Numero Invalido&quot;);</span>
+<span class="nc" id="L114">    }</span>
+
+    public String getBairroCliente() {
+<span class="nc" id="L117">        return bairroCliente;</span>
+    }
+
+    public void setBairroCliente(String bairroCliente) throws Exception {
+<span class="nc bnc" id="L121" title="All 2 branches missed.">        if(bairroCliente.isEmpty())</span>
+<span class="nc" id="L122">            throw new Exception(&quot;Bairro Invalido&quot;);</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">        else if(bairroCliente.length() &lt; 45)</span>
+<span class="nc" id="L124">            this.bairroCliente = bairroCliente;</span>
+        else
+<span class="nc" id="L126">            throw new Exception(&quot;Bairro maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L127">    }</span>
+    
+    public String getCidadeCliente() {
+<span class="nc" id="L130">        return cidadeCliente;</span>
+    }
+
+    public void setCidadeCliente(String cidadeCliente) throws Exception {
+<span class="nc bnc" id="L134" title="All 2 branches missed.">        if(cidadeCliente.isEmpty())</span>
+<span class="nc" id="L135">            throw new Exception(&quot;Cidade Invalida&quot;);</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">        else if(cidadeCliente.length() &lt; 45)</span>
+<span class="nc" id="L137">            this.cidadeCliente = cidadeCliente;</span>
+        else
+<span class="nc" id="L139">            throw new Exception(&quot;Cidade maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L140">    }</span>
+    
+    public String getComplementoCliente() {
+<span class="nc" id="L143">        return complementoCliente;</span>
+    }
+
+    public void setComplementoCliente(String complementoCliente) {
+<span class="nc" id="L147">        this.complementoCliente = complementoCliente;</span>
+<span class="nc" id="L148">    }</span>
+    
+    public String getEstadoCliente() {
+<span class="nc" id="L151">        return estadoCliente;</span>
+    }
+
+    public void setEstadoCliente(String estadoCliente) throws Exception {
+<span class="nc bnc" id="L155" title="All 2 branches missed.">        if(estadoCliente.isEmpty())</span>
+<span class="nc" id="L156">            throw new Exception(&quot;Estado Invalido&quot;);</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">        else if(estadoCliente.length() &lt; 45)</span>
+<span class="nc" id="L158">            this.estadoCliente = estadoCliente;</span>
+        else
+<span class="nc" id="L160">            throw new Exception(&quot;Estado maior que 45 caracteres&quot;);</span>
+<span class="nc" id="L161">    }</span>
+
+    public String getTelefoneCliente() {
+<span class="nc" id="L164">        return telefoneCliente;</span>
+    }
+
+    public void setTelefoneCliente(String telefoneCliente) throws Exception{
+<span class="nc" id="L168">        telefoneCliente = telefoneCliente.replaceAll(&quot;\\D+&quot;,&quot;&quot;);</span>
+<span class="nc bnc" id="L169" title="All 4 branches missed.">        if((telefoneCliente.length() == 10) || (telefoneCliente.length() == 11))</span>
+<span class="nc" id="L170">            this.telefoneCliente = telefoneCliente;</span>
+        else
+<span class="nc" id="L172">            throw new Exception(&quot;Telefone Invalido&quot;);</span>
+<span class="nc" id="L173">    }</span>
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L177">        int hash = 5;</span>
+<span class="nc" id="L178">        hash = 89 * hash + this.idCliente;</span>
+<span class="nc" id="L179">        return hash;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="nc bnc" id="L184" title="All 2 branches missed.">        if (this == obj) {</span>
+<span class="nc" id="L185">            return true;</span>
+        }
+<span class="nc bnc" id="L187" title="All 2 branches missed.">        if (obj == null) {</span>
+<span class="nc" id="L188">            return false;</span>
+        }
+<span class="nc bnc" id="L190" title="All 2 branches missed.">        if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L191">            return false;</span>
+        }
+<span class="nc" id="L193">        final Cliente other = (Cliente) obj;</span>
+<span class="nc bnc" id="L194" title="All 2 branches missed.">        if (this.idCliente != other.idCliente) {</span>
+<span class="nc" id="L195">            return false;</span>
+        }
+<span class="nc" id="L197">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

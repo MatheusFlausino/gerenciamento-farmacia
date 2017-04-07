@@ -31,10 +31,10 @@ import javax.swing.JOptionPane;
 public class DAOFornecedor {  
    // Configura essas variáveis de acordo com o seu banco  
    private Connection con = null;
-   private static final String NOME = "u597091211_eng ", 
-                               SENHA = "Engenharia1"; 
+   private static final String NOME = "sql10167525", 
+                               SENHA = "bztR3vrtfT"; 
   
-   public void apagar(int id) {  
+   public void apagar(int id) throws Exception {  
       try {  
         conectar();  
           try (PreparedStatement stmt = con.prepareStatement("DELETE FROM fornecedor WHERE id = ?")) {
@@ -42,7 +42,7 @@ public class DAOFornecedor {
               stmt.execute();
           }
       } catch (Exception e) {  
-        imprimeErro("Erro ao apagar Fornecedor", e.getMessage());  
+        throw new Exception("Erro ao apagar Fornecedor");  
       } finally {  
         fechar();  
       }  
@@ -74,17 +74,16 @@ public class DAOFornecedor {
          }  
          return resultados;  
       } catch (SQLException e) {  
-         imprimeErro("Erro ao buscar pessoas", e.getMessage());  
-         return null;  
+         throw new Exception("Erro ao buscar pessoas");  
       }  
    }  
   
-   public ArrayList<Fornecedor> buscar(String id) throws Exception {    
-      ArrayList<Fornecedor> resultados = new ArrayList<>();   
+   public Fornecedor buscar(int id) throws Exception {    
+      Fornecedor resultados = new Fornecedor();   
       try {
          conectar();
          PreparedStatement stmt = con.prepareStatement("SELECT * FROM pessoa WHERE id LIKE ?");
-         stmt.setString(1, id);
+         stmt.setInt(1, id);
          ResultSet rs = stmt.executeQuery();
          while (rs.next()) {  
             Fornecedor temp = new Fornecedor();  
@@ -100,17 +99,16 @@ public class DAOFornecedor {
             temp.setTelefoneFornecedor(rs.getString("telefone"));
             temp.setComplementoFornecedor(rs.getString("complemento"));
             temp.setNumeroFornecedor(rs.getInt("numero"));  
-            resultados.add(temp);  
+            resultados = temp;  
          }  
          return resultados;  
       } catch (SQLException e) {  
-         imprimeErro("Erro ao buscar Fornecedor", e.getMessage());  
-         return null;  
+         throw new Exception("Erro ao buscar Fornecedor");  
       }  
   
    }  
   
-   public void insere(Fornecedor pessoaFornecedor){    
+   public boolean insere(Fornecedor pessoaFornecedor) throws Exception{    
       try {
         conectar();
         String sql = "INSERT INTO fornecedores"+
@@ -131,15 +129,16 @@ public class DAOFornecedor {
               stmt.execute();
               stmt.close();
           }
-        System.out.println("Inserida!");  
+        System.out.println("Inserida!"); 
+        return true;
       } catch (Exception e) {  
-         imprimeErro("Erro ao inserir Fornecedor", e.getMessage());  
+         throw new Exception("Erro ao inserir Fornecedor");  
       } finally {  
          fechar();  
       }  
    }
    
-    public void atualizar(Fornecedor pessoaFornecedor) {   
+    public boolean atualizar(Fornecedor pessoaFornecedor) throws Exception {   
         String sql = "UPDATE fornecedor SET nome = ?, cnpj = ?, cidade = ?, estado = ?, cep = ?, "
                 + "bairro =?, logradouro = ?, telefone = ?, complemento = ?, numero =? WHERE  id = ?";
         try {          
@@ -160,8 +159,9 @@ public class DAOFornecedor {
                 stmt.close();
             }
             System.out.println("Atualizada!");
+            return true;
         } catch (Exception e) {
-            imprimeErro("Erro ao fechar conexão", e.getMessage());              
+            throw new Exception("Erro ao fechar conexão");              
         } finally {  
             fechar();  
         }  
@@ -172,19 +172,13 @@ public class DAOFornecedor {
          System.out.println("Conectado!");
    }  
   
-   private void fechar() {  
+   private void fechar() throws Exception {  
       try {   
          con.close();  
          System.out.println("Conexão Fechada");  
       } catch (SQLException e) {  
-         imprimeErro("Erro ao fechar conexão", e.getMessage());  
+         throw new Exception("Erro ao fechar conexão");  
       }  
    }  
   
-   private void imprimeErro(String msg, String msgErro) {  
-      JOptionPane.showMessageDialog(null, msg, "Erro crítico", 0);  
-      System.err.println(msg);  
-      System.out.println(msgErro);  
-      System.exit(0);  
-   }  
 }  

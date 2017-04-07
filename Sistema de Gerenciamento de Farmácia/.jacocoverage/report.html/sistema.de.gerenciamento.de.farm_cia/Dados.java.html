@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Dados.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Sistema_de_Gerenciamento_de_Farm_cia&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sistema.de.gerenciamento.de.farmácia</a> &gt; <span class="el_source">Dados.java</span></div><h1>Dados.java</h1><pre class="source lang-java linenums">/*
+ * Classe de Conexao com os Dados
+ */
+package sistema.de.gerenciamento.de.farmácia;
+
+import java.sql.Connection;  
+import java.sql.DriverManager;   
+
+/**
+ *
+ * @author Pedro e Matheus
+ */
+<span class="nc" id="L13">public class Dados {</span>
+   private static final String URL = &quot;jdbc:mysql://mysql.hostinger.com.br&quot;;
+  
+    public Connection conexao(String nome , String senha) throws Exception {
+        try{
+<span class="nc" id="L18">            return DriverManager.getConnection(URL, nome, senha);</span>
+<span class="nc" id="L19">        } catch (Exception e) {</span>
+<span class="nc" id="L20">            throw new Exception(&quot;Erro de conexão com banco&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

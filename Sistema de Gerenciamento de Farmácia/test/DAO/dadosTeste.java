@@ -18,14 +18,17 @@ import sistema.de.gerenciamento.de.farmácia.Dados;
 public class dadosTeste {
     //Teste Conexao de dados
     @Test
-    public void testeConexaoDados() throws Exception {
+    public void testConexao() throws Exception {
+        System.out.println("conexao");
+        String nome = "";
+        String senha = "";
+        Dados instance = new Dados();
         String expResult = "Erro de conexão com banco";
-        try {
-            Connection dados = new Dados().conexao("root", "pass");
-            fail("Deveria ter lançado uma exceção!");
-        } catch(Exception e) {
+        try{
+            Connection result = instance.conexao(nome, senha);
+            fail();
+        }catch(Exception e){
             assertEquals(expResult, e.getMessage());
         }
-        
     }
 }
