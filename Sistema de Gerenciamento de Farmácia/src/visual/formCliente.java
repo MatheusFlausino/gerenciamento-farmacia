@@ -6,7 +6,6 @@
 package visual;
 
 import java.sql.Date;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -321,15 +320,12 @@ public final class formCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void atualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarClienteActionPerformed
-        // TODO add your handling code here:
-        DAOCliente daoCliente = new DAOCliente();
-        
+        // TODO add your handling code here:        
         try {
-            Cliente novoCliente = getCliente();
-            daoCliente.atualizar(novoCliente);
-            imprimeMsg("Cliente Atualizado com Sucesso");
+            DAOCliente daoCliente = new DAOCliente();
+            boolean result = daoCliente.atualizar(getCliente());
         } catch (Exception ex) {
-            System.out.print("Erro ao Atualizar: "+ ex.getMessage());
+            System.out.println("Erro ao Atualizar: "+ ex.getMessage());
         }
     }//GEN-LAST:event_atualizarClienteActionPerformed
 
@@ -371,19 +367,19 @@ public final class formCliente extends javax.swing.JFrame {
 
     private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
         // TODO add your handling code here:
-        Cliente buscaCliente = buscarCliente();
-        
-        nomeCliente.setText(buscaCliente.getNomeCliente() );
-        cpfCliente.setText(buscaCliente.getCpfCliente() );
-        dataNascCliente.setText(String.valueOf(buscaCliente.getDataNascCliente()));
-        cepCliente.setText(buscaCliente.getCepCliente() );
-        logradouroCliente.setText(buscaCliente.getLogradouroCliente() );
-        numeroCliente.setText(String.valueOf(buscaCliente.getNumeroCliente()));
-        bairroCliente.setText(buscaCliente.getBairroCliente() );
-        cidadeCliente.setText(buscaCliente.getCidadeCliente() );
-        complementoCliente.setText(buscaCliente.getComplementoCliente() );
-        estadoCliente.setText(buscaCliente.getEstadoCliente() );
-        telefoneCliente.setText(buscaCliente.getTelefoneCliente() );
+        int id = Integer.parseInt(codigoCliente.getText());
+        Cliente buscar = buscarCliente(id);
+        nomeCliente.setText(buscar.getNomeCliente() );
+        cpfCliente.setText(buscar.getCpfCliente() );
+        dataNascCliente.setText(String.valueOf(buscar.getDataNascCliente()));
+        cepCliente.setText(buscar.getCepCliente() );
+        logradouroCliente.setText(buscar.getLogradouroCliente() );
+        numeroCliente.setText(String.valueOf(buscar.getNumeroCliente()));
+        bairroCliente.setText(buscar.getBairroCliente() );
+        cidadeCliente.setText(buscar.getCidadeCliente() );
+        complementoCliente.setText(buscar.getComplementoCliente() );
+        estadoCliente.setText(buscar.getEstadoCliente() );
+        telefoneCliente.setText(buscar.getTelefoneCliente() );
     }//GEN-LAST:event_buscarClienteActionPerformed
 
     /**
@@ -435,8 +431,9 @@ public final class formCliente extends javax.swing.JFrame {
         telefoneCliente.setText("");
     }
     
-    private Cliente getCliente() throws ParseException, Exception{
+    private Cliente getCliente() throws Exception{
         Cliente novoCliente = new Cliente();
+        String data = dataNascCliente.getText();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         
         novoCliente.setIdCliente(Integer.parseInt(codigoCliente.getText()));
@@ -446,8 +443,7 @@ public final class formCliente extends javax.swing.JFrame {
         novoCliente.setBairroCliente(bairroCliente.getText());
         novoCliente.setCidadeCliente(cidadeCliente.getText());
         novoCliente.setComplementoCliente(complementoCliente.getText());
-        System.out.print(dataNascCliente.getText());
-        novoCliente.setDataNascCliente(new Date(format.parse(dataNascCliente.getText()).getTime()));
+        novoCliente.setDataNascCliente(new Date(format.parse(data).getTime()));
         novoCliente.setLogradouroCliente(logradouroCliente.getText());
         novoCliente.setEstadoCliente(estadoCliente.getText());
         novoCliente.setNumeroCliente(Integer.parseInt(numeroCliente.getText()));
@@ -455,6 +451,7 @@ public final class formCliente extends javax.swing.JFrame {
         
         return novoCliente;
     }
+    
     public void setCodigo(boolean id) throws Exception{
         int codigo = 0;
         System.out.print(id);
@@ -468,11 +465,10 @@ public final class formCliente extends javax.swing.JFrame {
         codigoCliente.setText(String.valueOf(codigo));
     }
     
-    private Cliente buscarCliente(){
-        DAOCliente daoCliente = new DAOCliente();
-        
+    private Cliente buscarCliente(int id){        
         try {
-            return daoCliente.buscar(Integer.parseInt(codigoCliente.getText()));
+            DAOCliente daoCliente = new DAOCliente();
+            return daoCliente.buscar(id);
         } catch (Exception ex) {
             System.out.print("Erro ao Buscar Cliente: "+ ex.getMessage());
         }
@@ -480,7 +476,7 @@ public final class formCliente extends javax.swing.JFrame {
     }
     
     private void imprimeMsg(String msg) {  
-        JOptionPane.showMessageDialog(null, msg, "Notificação", 0);  
+        JOptionPane.showMessageDialog(null, msg, "Notificação",  JOptionPane.INFORMATION_MESSAGE);  
     } 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * @author Pedro e Matheus
  */
 public class Dados {
-   private static final String URL = "jdbc:mysql://sql10.freemysqlhosting.net:3306/sql10167525";
+   private static final String URL = "jdbc:mysql://localhost:3306/engSoft";
   
     public Connection conexao(String nome , String senha) throws Exception {
         try{

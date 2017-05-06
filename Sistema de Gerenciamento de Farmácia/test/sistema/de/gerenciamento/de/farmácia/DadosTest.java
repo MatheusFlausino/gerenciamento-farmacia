@@ -3,22 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package sistema.de.gerenciamento.de.farmácia;
 
 import java.sql.Connection;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import sistema.de.gerenciamento.de.farmácia.Dados;
-
 
 /**
  *
- * @author matheus
+ * @author mathe_56ugtvf
  */
-public class dadosTeste {
+public class DadosTest {
+    
+    public DadosTest() {
+    }
+
+    /**
+     * Test of conexao method, of class Dados.
+     */
     //Teste Conexao de dados
     @Test
-    public void testConexao() throws Exception {
+    public void testConexao() {
         System.out.println("conexao");
         String nome = "";
         String senha = "";
@@ -31,4 +36,5 @@ public class dadosTeste {
             assertEquals(expResult, e.getMessage());
         }
     }
+    
 }

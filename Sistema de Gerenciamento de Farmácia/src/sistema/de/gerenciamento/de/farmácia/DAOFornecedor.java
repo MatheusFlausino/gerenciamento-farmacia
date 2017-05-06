@@ -30,8 +30,8 @@ import java.util.ArrayList;
 public class DAOFornecedor {  
    // Configura essas variáveis de acordo com o seu banco  
    private Connection con = null;
-   private static final String NOME = "sql10167525", 
-                               SENHA = "bztR3vrtfT"; 
+   private static final String NOME = "root", 
+                               SENHA = ""; 
   
    public void apagar(int id) throws Exception {  
       try {  
@@ -71,10 +71,10 @@ public class DAOFornecedor {
             
             resultados.add(temp);  
          }  
-         return resultados;  
       } catch (SQLException e) {  
          throw new Exception("Erro ao buscar pessoas");  
-      }  
+      } 
+      return resultados;  
    }  
   
    public Fornecedor buscar(int id) throws Exception { 
@@ -129,7 +129,6 @@ public class DAOFornecedor {
               stmt.execute();
               stmt.close();
           }
-        System.out.println("Inserida!"); 
         retorno = true;
       } catch (Exception e) {  
          throw new Exception("Erro ao inserir Fornecedor");  
@@ -139,12 +138,14 @@ public class DAOFornecedor {
     return retorno;
    }
    
-    public boolean atualizar(Fornecedor pessoaFornecedor) throws Exception {   
+    public boolean atualizar(Fornecedor pessoaFornecedor) throws Exception {
+        boolean resultado = false;
         String sql = "UPDATE fornecedor SET nome = ?, cnpj = ?, cidade = ?, estado = ?, cep = ?, "
                 + "bairro =?, logradouro = ?, telefone = ?, complemento = ?, numero =? WHERE  id = ?";
-        try {          
+        try {
             conectar(); 
-            try (PreparedStatement stmt = con.prepareStatement(sql)) {
+            
+            try (PreparedStatement stmt = con.prepareStatement(sql)){
                 stmt.setString(1, pessoaFornecedor.getNomeFornecedor() );
                 stmt.setString(2, pessoaFornecedor.getCnpjFornecedor() );
                 stmt.setString(3, pessoaFornecedor.getCidadeFornecedor()) ;
@@ -156,22 +157,22 @@ public class DAOFornecedor {
                 stmt.setString(9, pessoaFornecedor.getComplementoFornecedor()) ;
                 stmt.setInt(10, pessoaFornecedor.getNumeroFornecedor() );
                 stmt.setInt(11, pessoaFornecedor.getIdFornecedor() );
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
-            System.out.println("Atualizada!");
-            return true;
+            resultado = true;
         } catch (Exception e) {
-            throw new Exception("Erro ao fechar conexão");              
+            throw new Exception("Erro ao Atualizar");              
         } finally {  
             fechar();  
-        }  
+        }
+        return resultado;
     }  
      
-   private void conectar() throws Exception {  
-         this.con = new Dados().conexao(NOME, SENHA);  
-         System.out.println("Conectado!");
-   }  
+    private void conectar() throws Exception {  
+           con = new Dados().conexao(NOME,SENHA);   
+           System.out.println("Conectado!");   
+    }  
   
    private void fechar() throws Exception {  
       try {   

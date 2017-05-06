@@ -33,8 +33,8 @@ import java.util.ArrayList;
 public class DAOCliente {
   
    private Connection con = null;
-   private static final String NOME = "sql10167525", 
-                               SENHA = "bztR3vrtfT"; 
+   private static final String NOME = "root", 
+                               SENHA = ""; 
   
    public void apagar(int id) throws Exception {  
       try { 
@@ -52,40 +52,37 @@ public class DAOCliente {
    }  
   
    public ArrayList<Cliente> buscarTodos() throws Exception {  
-      ArrayList<Cliente> resultados = new ArrayList<>();  
+      ArrayList<Cliente> resultados = new ArrayList<>();
       try {
-         conectar();  
-          try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM cliente")) {
-              ResultSet rs = stmt.executeQuery();
-              while (rs.next()) {
-                  Cliente temp = new Cliente();
-                  // pega todos os atributos do Cliente
-                  temp.setIdCliente(rs.getInt("id"));
-                  temp.setNomeCliente(rs.getString("nome"));
-                  temp.setDataNascCliente(rs.getDate("datanasc"));
-                  temp.setCpfCliente(rs.getString("cpf"));
-                  temp.setCidadeCliente(rs.getString("cidade"));
-                  temp.setEstadoCliente(rs.getString("estado"));
-                  temp.setCepCliente(rs.getString("cep"));
-                  temp.setBairroCliente(rs.getString("bairro"));
-                  temp.setLogradouroCliente(rs.getString("logradouro"));
-                  temp.setTelefoneCliente(rs.getString("telefone"));
-                  temp.setComplementoCliente(rs.getString("complemento"));
-                  temp.setNumeroCliente(rs.getInt("numero"));
-                  
-                  resultados.add(temp);
-              }
-        }catch (Exception e) {  
-            throw new Exception("Erro no stmt");  
+        conectar();
+        PreparedStatement stmt = con.prepareStatement("SELECT * FROM cliente");
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            Cliente temp = new Cliente();
+            // pega todos os atributos do Cliente
+            temp.setIdCliente(rs.getInt("id"));
+            temp.setNomeCliente(rs.getString("nome"));
+            temp.setDataNascCliente(new Date(rs.getDate("datanasc").getTime()));
+            temp.setCpfCliente(rs.getString("cpf"));
+            temp.setCidadeCliente(rs.getString("cidade"));
+            temp.setEstadoCliente(rs.getString("estado"));
+            temp.setCepCliente(rs.getString("cep"));
+            temp.setBairroCliente(rs.getString("bairro"));
+            temp.setLogradouroCliente(rs.getString("logradouro"));
+            temp.setTelefoneCliente(rs.getString("telefone"));
+            temp.setComplementoCliente(rs.getString("complemento"));
+            temp.setNumeroCliente(rs.getInt("numero"));
+
+            resultados.add(temp);
         }
-        return resultados;  
-      } catch (Exception e) {  
+      } catch (SQLException e) {  
          throw new Exception("Erro ao buscar Cliente 1");  
-      }  
+      }
+      return resultados;
    }  
   
    public Cliente buscar(int id) throws Exception {  
-        Cliente resultados = null;  
+        Cliente resultados = null;
         try {  
             conectar();  
             try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM cliente WHERE id LIKE ? LIMIT 1")) {
@@ -96,7 +93,7 @@ public class DAOCliente {
                     // pega todos os atributos do Cliente
                     temp.setIdCliente(rs.getInt("id"));
                     temp.setNomeCliente(rs.getString("nome"));
-                    temp.setDataNascCliente(rs.getDate("datanasc"));
+                    temp.setDataNascCliente(new Date(rs.getDate("datanasc").getTime()));
                     temp.setCpfCliente(rs.getString("cpf"));
                     temp.setCidadeCliente(rs.getString("cidade"));
                     temp.setEstadoCliente(rs.getString("estado"));
@@ -109,10 +106,10 @@ public class DAOCliente {
                     resultados = temp;
                 }
             }
-            return resultados;  
         } catch (Exception e) {  
            throw new Exception("Erro ao buscar Cliente");  
         }
+        return resultados;  
    }  
   
     public boolean insere(Cliente pessoaCliente) throws Exception{ 
@@ -137,7 +134,6 @@ public class DAOCliente {
                 stmt.execute();
                 stmt.close();
             }
-           System.out.println("Inserida!");
            retorno = true;
         } catch (Exception e) {  
            throw new Exception("Erro ao inserir Cliente");  
@@ -149,7 +145,8 @@ public class DAOCliente {
    
     public boolean atualizar(Cliente pessoaCliente) throws Exception {
        boolean retorno = false;
-       String sql = "UPDATE cliente SET nome = ?, cpf = ?, datanasc = ? cidade = ?, estado = ?, cep = ?, bairro = ?, logradouro = ?, telefone = ?, complemento = ?, numero = ? WHERE  id = ?";
+       String sql = "UPDATE cliente SET nome = ?, cpf = ?, datanasc = ?, cidade = ?, estado = ?, "
+               + "cep = ?, bairro = ?, logradouro = ?, telefone = ?, complemento = ?, numero = ? WHERE  id = ?";
         try { 
             conectar();
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
@@ -165,10 +162,9 @@ public class DAOCliente {
                 stmt.setString(10,pessoaCliente.getComplementoCliente());
                 stmt.setInt(11,pessoaCliente.getNumeroCliente());
                 stmt.setInt(12,pessoaCliente.getIdCliente());
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
-            System.out.println("Atualizada!");
             retorno = true;
         } catch (Exception e) { 
           throw new Exception("Erro ao Atualizar");  

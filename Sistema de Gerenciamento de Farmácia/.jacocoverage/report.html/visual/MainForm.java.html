@@ -5,6 +5,9 @@
  */
 package visual;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author pedro
@@ -14,9 +17,9 @@ public class MainForm extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
-<span class="nc" id="L17">    public MainForm() {</span>
-<span class="nc" id="L18">        initComponents();</span>
-<span class="nc" id="L19">    }</span>
+<span class="nc" id="L20">    public MainForm() {</span>
+<span class="nc" id="L21">        initComponents();</span>
+<span class="nc" id="L22">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,21 +30,152 @@ public class MainForm extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L30">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L33">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L34">        jMenuBar1 = new javax.swing.JMenuBar();</span>
+<span class="nc" id="L35">        novo = new javax.swing.JMenu();</span>
+<span class="nc" id="L36">        novoCliente = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L37">        novoFornecedor = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L38">        gerenciar = new javax.swing.JMenu();</span>
+<span class="nc" id="L39">        gerenciarCliente = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L40">        gerenciarFornecedor = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L41">        exit = new javax.swing.JMenu();</span>
 
-<span class="nc" id="L32">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L33">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L34">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L35">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L36">            .addGap(0, 400, Short.MAX_VALUE)</span>
+<span class="nc" id="L43">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L44">        setTitle(&quot;Gerenciamento de Farmácia&quot;);</span>
+
+<span class="nc" id="L46">        jPanel1.setToolTipText(&quot;&quot;);</span>
+
+<span class="nc" id="L48">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L49">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L50">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L51">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L52">            .addGap(0, 523, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L38">        layout.setVerticalGroup(</span>
-<span class="nc" id="L39">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L40">            .addGap(0, 300, Short.MAX_VALUE)</span>
+<span class="nc" id="L54">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L55">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L56">            .addGap(0, 327, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L43">        pack();</span>
-<span class="nc" id="L44">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L59">        novo.setText(&quot;Novo&quot;);</span>
+
+<span class="nc" id="L61">        novoCliente.setText(&quot;Cliente&quot;);</span>
+<span class="nc" id="L62">        novoCliente.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L64">                novoClienteActionPerformed(evt);</span>
+<span class="nc" id="L65">            }</span>
+        });
+<span class="nc" id="L67">        novo.add(novoCliente);</span>
+
+<span class="nc" id="L69">        novoFornecedor.setText(&quot;Fornecedor&quot;);</span>
+<span class="nc" id="L70">        novoFornecedor.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L72">                novoFornecedorActionPerformed(evt);</span>
+<span class="nc" id="L73">            }</span>
+        });
+<span class="nc" id="L75">        novo.add(novoFornecedor);</span>
+
+<span class="nc" id="L77">        jMenuBar1.add(novo);</span>
+
+<span class="nc" id="L79">        gerenciar.setText(&quot;Gerenciar&quot;);</span>
+
+<span class="nc" id="L81">        gerenciarCliente.setText(&quot;Cliente&quot;);</span>
+<span class="nc" id="L82">        gerenciarCliente.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L84">                gerenciarClienteActionPerformed(evt);</span>
+<span class="nc" id="L85">            }</span>
+        });
+<span class="nc" id="L87">        gerenciar.add(gerenciarCliente);</span>
+
+<span class="nc" id="L89">        gerenciarFornecedor.setText(&quot;Fornecedor&quot;);</span>
+<span class="nc" id="L90">        gerenciarFornecedor.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L92">                gerenciarFornecedorActionPerformed(evt);</span>
+<span class="nc" id="L93">            }</span>
+        });
+<span class="nc" id="L95">        gerenciar.add(gerenciarFornecedor);</span>
+
+<span class="nc" id="L97">        jMenuBar1.add(gerenciar);</span>
+
+<span class="nc" id="L99">        exit.setText(&quot;Sair&quot;);</span>
+<span class="nc" id="L100">        exit.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L102">                exitActionPerformed(evt);</span>
+<span class="nc" id="L103">            }</span>
+        });
+<span class="nc" id="L105">        jMenuBar1.add(exit);</span>
+
+<span class="nc" id="L107">        setJMenuBar(jMenuBar1);</span>
+
+<span class="nc" id="L109">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L110">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L111">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L112">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L113">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L114">                .addContainerGap(61, Short.MAX_VALUE)</span>
+<span class="nc" id="L115">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L116">                .addGap(62, 62, 62))</span>
+        );
+<span class="nc" id="L118">        layout.setVerticalGroup(</span>
+<span class="nc" id="L119">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L120">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L121">                .addGap(64, 64, 64)</span>
+<span class="nc" id="L122">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L123">                .addContainerGap(67, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L126">        pack();</span>
+<span class="nc" id="L127">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void gerenciarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarClienteActionPerformed
+        // TODO add your handling code here:
+        formCliente form;
+        try {
+<span class="nc" id="L133">            form = new formCliente();</span>
+<span class="nc" id="L134">            form.setVisible(true);</span>
+<span class="nc" id="L135">        } catch (Exception ex) {</span>
+<span class="nc" id="L136">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L137">        }</span>
+<span class="nc" id="L138">    }//GEN-LAST:event_gerenciarClienteActionPerformed</span>
+
+    private void novoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoClienteActionPerformed
+        // TODO add your handling code here:
+        formCliente form;
+        try {
+<span class="nc" id="L144">            form = new formCliente();</span>
+<span class="nc" id="L145">            form.setCodigo(true);</span>
+<span class="nc" id="L146">            form.setVisible(true);</span>
+<span class="nc" id="L147">        } catch (Exception ex) {</span>
+<span class="nc" id="L148">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L149">        }</span>
+<span class="nc" id="L150">    }//GEN-LAST:event_novoClienteActionPerformed</span>
+
+    private void gerenciarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarFornecedorActionPerformed
+        // TODO add your handling code here:
+        formFornecedor form;
+        try {
+<span class="nc" id="L156">            form = new formFornecedor();</span>
+<span class="nc" id="L157">            form.setVisible(true);</span>
+<span class="nc" id="L158">        } catch (Exception ex) {</span>
+<span class="nc" id="L159">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L160">        }</span>
+<span class="nc" id="L161">    }//GEN-LAST:event_gerenciarFornecedorActionPerformed</span>
+
+    private void novoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoFornecedorActionPerformed
+        // TODO add your handling code here:
+        formFornecedor form;
+        try {
+<span class="nc" id="L167">            form = new formFornecedor();</span>
+<span class="nc" id="L168">            form.setCodigo(true);</span>
+<span class="nc" id="L169">            form.setVisible(true);</span>
+<span class="nc" id="L170">        } catch (Exception ex) {</span>
+<span class="nc" id="L171">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L172">        }</span>
+<span class="nc" id="L173">    }//GEN-LAST:event_novoFornecedorActionPerformed</span>
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        // TODO add your handling code here:,
+<span class="nc" id="L177">        System.exit(0);</span>
+<span class="nc" id="L178">    }//GEN-LAST:event_exitActionPerformed</span>
 
     /**
      * @param args the command line arguments
@@ -53,32 +187,41 @@ public class MainForm extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L56" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L57" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L58">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L59">                    break;</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L191" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L192">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L193">                    break;</span>
                 }
             }
-<span class="nc" id="L62">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L63">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L64">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L65">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L66">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L67">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L68">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L69">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L70">        }</span>
+<span class="nc" id="L196">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L197">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L198">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L199">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L200">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L201">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L202">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L203">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L204">        }</span>
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L74">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L208">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L76">                new MainForm().setVisible(true);</span>
-<span class="nc" id="L77">            }</span>
+<span class="nc" id="L210">                new MainForm().setVisible(true);</span>
+<span class="nc" id="L211">            }</span>
         });
-<span class="nc" id="L79">    }</span>
+<span class="nc" id="L213">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu exit;
+    private javax.swing.JMenu gerenciar;
+    private javax.swing.JMenuItem gerenciarCliente;
+    private javax.swing.JMenuItem gerenciarFornecedor;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu novo;
+    private javax.swing.JMenuItem novoCliente;
+    private javax.swing.JMenuItem novoFornecedor;
     // End of variables declaration//GEN-END:variables
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

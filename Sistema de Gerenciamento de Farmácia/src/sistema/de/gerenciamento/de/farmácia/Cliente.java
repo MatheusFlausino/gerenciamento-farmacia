@@ -25,9 +25,6 @@ public class Cliente implements Serializable {
     private String estadoCliente;
     private String telefoneCliente;
 
-    public Cliente() {
-    }
-
     public String getNomeCliente() {
         return nomeCliente;
     }
@@ -171,29 +168,8 @@ public class Cliente implements Serializable {
         else
             throw new Exception("Telefone Invalido");
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + this.idCliente;
-        return hash;
+    
+    public Cliente() {
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Cliente other = (Cliente) obj;
-        if (this.idCliente != other.idCliente) {
-            return false;
-        }
-        return true;
-    }
+    
 }

@@ -154,31 +154,6 @@ public class Fornecedor implements Serializable {
             throw new Exception("Telefone Invalido");
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + this.idFornecedor;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Fornecedor other = (Fornecedor) obj;
-        if (this.idFornecedor != other.idFornecedor) {
-            return false;
-        }
-        return true;
-    }
-
     public Fornecedor() {
     }
 }

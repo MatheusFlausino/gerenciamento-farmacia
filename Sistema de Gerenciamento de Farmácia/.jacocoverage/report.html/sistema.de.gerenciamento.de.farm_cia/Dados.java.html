@@ -5,20 +5,22 @@ package sistema.de.gerenciamento.de.farmácia;
 
 import java.sql.Connection;  
 import java.sql.DriverManager;   
+import java.sql.SQLException;
 
 /**
  *
  * @author Pedro e Matheus
  */
-<span class="nc" id="L13">public class Dados {</span>
-   private static final String URL = &quot;jdbc:mysql://mysql.hostinger.com.br&quot;;
+<span class="fc" id="L14">public class Dados {</span>
+   private static final String URL = &quot;jdbc:mysql://localhost:3306/engSoft&quot;;
   
     public Connection conexao(String nome , String senha) throws Exception {
         try{
-<span class="nc" id="L18">            return DriverManager.getConnection(URL, nome, senha);</span>
-<span class="nc" id="L19">        } catch (Exception e) {</span>
-<span class="nc" id="L20">            throw new Exception(&quot;Erro de conexão com banco&quot;);</span>
+<span class="fc" id="L19">            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span>
+<span class="fc" id="L20">            return DriverManager.getConnection(URL, nome, senha);</span>
+<span class="fc" id="L21">        } catch (ClassNotFoundException | SQLException e) {</span>
+<span class="fc" id="L22">            throw new Exception(&quot;Erro de conexão com banco&quot;);</span>
         }
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
