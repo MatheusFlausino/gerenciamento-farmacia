@@ -30,12 +30,13 @@ public class Cliente implements Serializable {
     }
 
     public void setNomeCliente(String nomeCliente) throws Exception {
-        if(nomeCliente.isEmpty())
+        if (nomeCliente.isEmpty()) {
             throw new Exception("Nome Invalido");
-        else if(nomeCliente.length() < 45)
+        } else if (nomeCliente.length() < 45) {
             this.nomeCliente = nomeCliente;
-        else
-            throw new Exception("Nome maior que 45 caracteres"); 
+        } else {
+            throw new Exception("Nome maior que 45 caracteres");
+        }
     }
 
     public int getIdCliente() {
@@ -43,9 +44,9 @@ public class Cliente implements Serializable {
     }
 
     public void setIdCliente(int idCliente) throws Exception {
-        if(idCliente >= 0){
+        if (idCliente >= 0) {
             this.idCliente = idCliente;
-        }else{
+        } else {
             throw new Exception("ID Invalido");
         }
     }
@@ -55,11 +56,12 @@ public class Cliente implements Serializable {
     }
 
     public void setCpfCliente(String cpfCliente) throws Exception {
-        cpfCliente = cpfCliente.replaceAll("\\D+","");
-        if(cpfCliente.length() == 11)
+        cpfCliente = cpfCliente.replaceAll("\\D+", "");
+        if (cpfCliente.length() == 11) {
             this.cpfCliente = cpfCliente;
-        else
+        } else {
             throw new Exception("CPF Invalido");
+        }
     }
 
     public Date getDataNascCliente() {
@@ -68,22 +70,24 @@ public class Cliente implements Serializable {
 
     public void setDataNascCliente(Date dataNascCliente) throws Exception {
         Date dt = new Date();
-        if(dataNascCliente.after(dt))
+        if (dataNascCliente.after(dt)) {
             throw new Exception("Data Invalida");
-        else
+        } else {
             this.dataNascCliente = dataNascCliente;
+        }
     }
 
     public String getCepCliente() {
         return cepCLiente;
     }
 
-    public void setCepCliente(String cepCLiente) throws Exception{
-        cepCLiente = cepCLiente.replaceAll("\\D+","");
-        if(cepCLiente.length() == 8)
+    public void setCepCliente(String cepCLiente) throws Exception {
+        cepCLiente = cepCLiente.replaceAll("\\D+", "");
+        if (cepCLiente.length() == 8) {
             this.cepCLiente = cepCLiente;
-        else
+        } else {
             throw new Exception("CEP Invalido");
+        }
     }
 
     public String getLogradouroCliente() {
@@ -91,12 +95,13 @@ public class Cliente implements Serializable {
     }
 
     public void setLogradouroCliente(String logradouroCLiente) throws Exception {
-        if(logradouroCLiente.isEmpty())
+        if (logradouroCLiente.isEmpty()) {
             throw new Exception("Logradouro Invalido");
-        else if(logradouroCLiente.length() < 45)
+        } else if (logradouroCLiente.length() < 45) {
             this.logradouroCLiente = logradouroCLiente;
-        else
+        } else {
             throw new Exception("Logradouro maior que 45 caracteres");
+        }
     }
 
     public int getNumeroCliente() {
@@ -104,10 +109,11 @@ public class Cliente implements Serializable {
     }
 
     public void setNumeroCliente(int numeroCliente) throws Exception {
-        if(numeroCliente > 0)
+        if (numeroCliente > 0) {
             this.numeroCliente = numeroCliente;
-        else
+        } else {
             throw new Exception("Numero Invalido");
+        }
     }
 
     public String getBairroCliente() {
@@ -115,27 +121,29 @@ public class Cliente implements Serializable {
     }
 
     public void setBairroCliente(String bairroCliente) throws Exception {
-        if(bairroCliente.isEmpty())
+        if (bairroCliente.isEmpty()) {
             throw new Exception("Bairro Invalido");
-        else if(bairroCliente.length() < 45)
+        } else if (bairroCliente.length() < 45) {
             this.bairroCliente = bairroCliente;
-        else
+        } else {
             throw new Exception("Bairro maior que 45 caracteres");
+        }
     }
-    
+
     public String getCidadeCliente() {
         return cidadeCliente;
     }
 
     public void setCidadeCliente(String cidadeCliente) throws Exception {
-        if(cidadeCliente.isEmpty())
+        if (cidadeCliente.isEmpty()) {
             throw new Exception("Cidade Invalida");
-        else if(cidadeCliente.length() < 45)
+        } else if (cidadeCliente.length() < 45) {
             this.cidadeCliente = cidadeCliente;
-        else
+        } else {
             throw new Exception("Cidade maior que 45 caracteres");
+        }
     }
-    
+
     public String getComplementoCliente() {
         return complementoCliente;
     }
@@ -143,33 +151,35 @@ public class Cliente implements Serializable {
     public void setComplementoCliente(String complementoCliente) {
         this.complementoCliente = complementoCliente;
     }
-    
+
     public String getEstadoCliente() {
         return estadoCliente;
     }
 
     public void setEstadoCliente(String estadoCliente) throws Exception {
-        if(estadoCliente.isEmpty())
+        if (estadoCliente.isEmpty()) {
             throw new Exception("Estado Invalido");
-        else if(estadoCliente.length() < 45)
+        } else if (estadoCliente.length() < 45) {
             this.estadoCliente = estadoCliente;
-        else
+        } else {
             throw new Exception("Estado maior que 45 caracteres");
+        }
     }
 
     public String getTelefoneCliente() {
         return telefoneCliente;
     }
 
-    public void setTelefoneCliente(String telefoneCliente) throws Exception{
-        telefoneCliente = telefoneCliente.replaceAll("\\D+","");
-        if((telefoneCliente.length() == 10) || (telefoneCliente.length() == 11))
+    public void setTelefoneCliente(String telefoneCliente) throws Exception {
+        telefoneCliente = telefoneCliente.replaceAll("\\D+", "");
+        if ((telefoneCliente.length() == 10) || (telefoneCliente.length() == 11)) {
             this.telefoneCliente = telefoneCliente;
-        else
+        } else {
             throw new Exception("Telefone Invalido");
+        }
     }
-    
+
     public Cliente() {
     }
-    
+
 }

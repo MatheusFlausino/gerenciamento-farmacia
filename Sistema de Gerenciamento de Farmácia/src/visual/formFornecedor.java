@@ -233,7 +233,7 @@ public final class formFornecedor extends javax.swing.JFrame {
                                 .addGap(70, 70, 70)
                                 .addComponent(exit))
                             .addComponent(tituloCliente))))
-                .addGap(74, 74, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {atualizarCliente, buscarCliente, excluirCliente, exit, reset, salvarCliente});
@@ -288,14 +288,14 @@ public final class formFornecedor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(telefoneFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(salvarCliente)
                     .addComponent(atualizarCliente)
                     .addComponent(excluirCliente)
                     .addComponent(exit)
                     .addComponent(reset))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addGap(46, 46, 46))
         );
 
         pack();

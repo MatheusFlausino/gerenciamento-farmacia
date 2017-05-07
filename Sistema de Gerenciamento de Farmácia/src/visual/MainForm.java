@@ -35,10 +35,13 @@ public class MainForm extends javax.swing.JFrame {
         novo = new javax.swing.JMenu();
         novoCliente = new javax.swing.JMenuItem();
         novoFornecedor = new javax.swing.JMenuItem();
+        novoProduto = new javax.swing.JMenuItem();
         gerenciar = new javax.swing.JMenu();
         gerenciarCliente = new javax.swing.JMenuItem();
         gerenciarFornecedor = new javax.swing.JMenuItem();
+        gerenciarProduto = new javax.swing.JMenuItem();
         exit = new javax.swing.JMenu();
+        sairSistema = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciamento de Farmácia");
@@ -74,6 +77,14 @@ public class MainForm extends javax.swing.JFrame {
         });
         novo.add(novoFornecedor);
 
+        novoProduto.setText("Produto");
+        novoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoProdutoActionPerformed(evt);
+            }
+        });
+        novo.add(novoProduto);
+
         jMenuBar1.add(novo);
 
         gerenciar.setText("Gerenciar");
@@ -94,6 +105,14 @@ public class MainForm extends javax.swing.JFrame {
         });
         gerenciar.add(gerenciarFornecedor);
 
+        gerenciarProduto.setText("Produto");
+        gerenciarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciarProdutoActionPerformed(evt);
+            }
+        });
+        gerenciar.add(gerenciarProduto);
+
         jMenuBar1.add(gerenciar);
 
         exit.setText("Sair");
@@ -102,6 +121,15 @@ public class MainForm extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
+
+        sairSistema.setText("Sair do Sistema");
+        sairSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairSistemaActionPerformed(evt);
+            }
+        });
+        exit.add(sairSistema);
+
         jMenuBar1.add(exit);
 
         setJMenuBar(jMenuBar1);
@@ -173,9 +201,36 @@ public class MainForm extends javax.swing.JFrame {
     }//GEN-LAST:event_novoFornecedorActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        // TODO add your handling code here:,
+
         System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
+
+    private void novoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoProdutoActionPerformed
+        // TODO add your handling code here:
+        formProduto form;
+        try {
+            form = new formProduto();
+            form.setCodigo(true);
+            form.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_novoProdutoActionPerformed
+
+    private void sairSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairSistemaActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_sairSistemaActionPerformed
+
+    private void gerenciarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarProdutoActionPerformed
+        formProduto form;
+        try {
+            form = new formProduto();
+            form.setCodigo(true);
+            form.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_gerenciarProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,10 +272,13 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenu gerenciar;
     private javax.swing.JMenuItem gerenciarCliente;
     private javax.swing.JMenuItem gerenciarFornecedor;
+    private javax.swing.JMenuItem gerenciarProduto;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu novo;
     private javax.swing.JMenuItem novoCliente;
     private javax.swing.JMenuItem novoFornecedor;
+    private javax.swing.JMenuItem novoProduto;
+    private javax.swing.JMenuItem sairSistema;
     // End of variables declaration//GEN-END:variables
 }
