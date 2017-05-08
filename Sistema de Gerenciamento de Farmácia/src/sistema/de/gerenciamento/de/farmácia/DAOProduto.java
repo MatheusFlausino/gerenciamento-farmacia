@@ -24,7 +24,7 @@ public class DAOProduto {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement("DELETE FROM produto WHERE id = ?")) {
                 stmt.setInt(1, id);
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
         } catch (Exception e) {
@@ -81,7 +81,7 @@ public class DAOProduto {
 
     public boolean insere(Produto novoProduto) throws Exception {
         boolean retorno = false;
-        String sql = "INSERT INTO produto ( id, preco, fabricante) + VALUES(?,?,?)";
+        String sql = "INSERT INTO produto ( id, nome, preco, fabricante) VALUES(?,?,?)";
 
         try {
             conectar();
@@ -91,7 +91,7 @@ public class DAOProduto {
                 stmt.setDouble(3, novoProduto.getPrecoProduto());
                 stmt.setString(4, novoProduto.getProdutoFabricante());
 
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
             retorno = true;
@@ -105,13 +105,14 @@ public class DAOProduto {
 
     public boolean atualizar(Produto atuaProduto) throws Exception {
         boolean retorno = false;
-        String sql = "UPDATE produto preco = ?, fabricante = ? WHERE  id = ?";
+        String sql = "UPDATE produto SET nome = ? , preco = ?, fabricante = ? WHERE  id = ?";
         try {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
-                stmt.setInt(1, atuaProduto.getIdProduto());
+                stmt.setString(1, atuaProduto.getNomeProduto());
                 stmt.setDouble(2, atuaProduto.getPrecoProduto());
                 stmt.setString(3, atuaProduto.getProdutoFabricante());
+                stmt.setInt(4, atuaProduto.getIdProduto());
 
                 stmt.executeUpdate();
                 stmt.close();

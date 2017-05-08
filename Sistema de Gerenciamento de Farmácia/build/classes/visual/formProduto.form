@@ -91,7 +91,7 @@
                   <Component id="precoProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="270" max="32767" attributes="0"/>
+              <EmptySpace pref="88" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="salvarProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="atualizarProduto" alignment="3" min="-2" max="-2" attributes="0"/>

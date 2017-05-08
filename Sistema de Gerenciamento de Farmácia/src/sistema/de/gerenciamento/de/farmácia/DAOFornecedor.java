@@ -37,7 +37,9 @@ public class DAOFornecedor {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement("DELETE FROM fornecedor WHERE id = ?")) {
                 stmt.setInt(1, id);
-                stmt.execute();
+                stmt.executeUpdate();
+                stmt.close();
+                
             }
         } catch (Exception e) {
             throw new Exception("Erro ao apagar Fornecedor");
@@ -125,7 +127,7 @@ public class DAOFornecedor {
                 stmt.setString(9, pessoaFornecedor.getTelefoneFornecedor());
                 stmt.setString(10, pessoaFornecedor.getComplementoFornecedor());
                 stmt.setInt(11, pessoaFornecedor.getNumeroFornecedor());
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
             retorno = true;

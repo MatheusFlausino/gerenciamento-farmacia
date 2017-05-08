@@ -40,7 +40,7 @@ public class DAOCliente {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement("DELETE FROM cliente WHERE id = ?")) {
                 stmt.setInt(1, id);
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
         } catch (Exception e) {
@@ -130,7 +130,7 @@ public class DAOCliente {
                 stmt.setString(10, pessoaCliente.getComplementoCliente());
                 stmt.setInt(11, pessoaCliente.getNumeroCliente());
                 stmt.setInt(12, pessoaCliente.getIdCliente());
-                stmt.execute();
+                stmt.executeUpdate();
                 stmt.close();
             }
             retorno = true;

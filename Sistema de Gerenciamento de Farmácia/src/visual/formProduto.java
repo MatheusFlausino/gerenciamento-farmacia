@@ -164,7 +164,7 @@ public class formProduto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(precoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(salvarProduto)
                     .addComponent(atualizarProduto)
@@ -190,6 +190,7 @@ public class formProduto extends javax.swing.JFrame {
     private void salvarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarProdutoActionPerformed
         // TODO add your handling code here:
         Produto novoProduto = null;
+        
         DAOProduto daoProduto = new DAOProduto();
         try {
             novoProduto = getProduto();
