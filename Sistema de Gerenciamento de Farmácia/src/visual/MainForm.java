@@ -40,6 +40,7 @@ public class MainForm extends javax.swing.JFrame {
         gerenciarCliente = new javax.swing.JMenuItem();
         gerenciarFornecedor = new javax.swing.JMenuItem();
         gerenciarProduto = new javax.swing.JMenuItem();
+        estoque = new javax.swing.JMenu();
         exit = new javax.swing.JMenu();
         sairSistema = new javax.swing.JMenuItem();
 
@@ -115,6 +116,14 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenuBar1.add(gerenciar);
 
+        estoque.setText("Estoque");
+        estoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                estoqueMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(estoque);
+
         exit.setText("Sair");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +192,7 @@ public class MainForm extends javax.swing.JFrame {
         try {
             form = new formFornecedor();
             form.setVisible(true);
+            form.setCodigo(false);
         } catch (Exception ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -225,12 +235,23 @@ public class MainForm extends javax.swing.JFrame {
         formProduto form;
         try {
             form = new formProduto();
-            form.setCodigo(true);
             form.setVisible(true);
+            form.setCodigo(false);
         } catch (Exception ex) {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_gerenciarProdutoActionPerformed
+
+    private void estoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estoqueMouseClicked
+        // TODO add your handling code here:
+        formEstoque form;
+        try {
+            form = new formEstoque();
+            form.setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_estoqueMouseClicked
 
     /**
      * @param args the command line arguments
@@ -268,6 +289,7 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu estoque;
     private javax.swing.JMenu exit;
     private javax.swing.JMenu gerenciar;
     private javax.swing.JMenuItem gerenciarCliente;

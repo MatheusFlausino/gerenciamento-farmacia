@@ -126,10 +126,10 @@ public final class formFornecedor extends javax.swing.JFrame {
         }
 
         jLabel12.setLabelFor(cpfFornecedor);
-        jLabel12.setText("CPF");
+        jLabel12.setText("CNPJ");
 
         try {
-            cpfFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            cpfFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -427,7 +427,6 @@ public final class formFornecedor extends javax.swing.JFrame {
     
     private Fornecedor getFornecedor() throws ParseException, Exception{
         Fornecedor novoFornecedor = new Fornecedor();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         
         novoFornecedor.setIdFornecedor(Integer.parseInt(codigoFornecedor.getText()));
         novoFornecedor.setNomeFornecedor(nomeFornecedor.getText());

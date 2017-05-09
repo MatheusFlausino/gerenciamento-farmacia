@@ -45,7 +45,7 @@ public class DAOProduto {
                 // pega todos os atributos do Produto
                 temp.setNomeProduto(rs.getString("nome"));
                 temp.setIdProduto(rs.getInt("id"));
-                temp.setPrecoProduto(rs.getInt("preco"));
+                temp.setPrecoProduto(rs.getDouble("preco"));
                 temp.setFabricanteProduto(rs.getString("fabricante"));
 
                 resultados.add(temp);
@@ -68,7 +68,7 @@ public class DAOProduto {
                     // pega todos os atributos do Produto
                     temp.setNomeProduto(rs.getString("nome"));
                     temp.setIdProduto(rs.getInt("id"));
-                    temp.setPrecoProduto(rs.getInt("preco"));
+                    temp.setPrecoProduto(rs.getDouble("preco"));
                     temp.setFabricanteProduto(rs.getString("fabricante"));
                     resultados = temp;
                 }

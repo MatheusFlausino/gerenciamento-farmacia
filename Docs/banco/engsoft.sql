@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 09-Maio-2017 às 01:04
--- Versão do servidor: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Host: localhost
+-- Generation Time: May 09, 2017 at 09:10 
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -42,17 +42,40 @@ CREATE TABLE `cliente` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `cliente`
+-- Dumping data for table `cliente`
 --
 
 INSERT INTO `cliente` (`nome`, `cpf`, `cep`, `logradouro`, `bairro`, `telefone`, `id`, `numero`, `complemento`, `cidade`, `estado`, `datanasc`) VALUES
 ('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 1, 120, ' ', 'Cornélio Procópio', 'Paraná', '2000-02-21'),
-('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 2, 120, ' ', 'Cornélio Procópio', 'Paraná', '2000-02-21');
+('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 2, 120, ' ', 'Cornélio Procópio', 'Paraná', '1995-02-12');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `fornecedor`
+-- Table structure for table `estoque`
+--
+
+CREATE TABLE `estoque` (
+  `id` int(11) NOT NULL,
+  `qtd` int(11) NOT NULL,
+  `idFornecedor` int(11) NOT NULL,
+  `idProduto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `estoque`
+--
+
+INSERT INTO `estoque` (`id`, `qtd`, `idFornecedor`, `idProduto`) VALUES
+(1, 40, 1, 1),
+(2, 11, 0, 1),
+(9, 40, 1, 2),
+(10, 40, 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fornecedor`
 --
 
 CREATE TABLE `fornecedor` (
@@ -70,7 +93,7 @@ CREATE TABLE `fornecedor` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Extraindo dados da tabela `fornecedor`
+-- Dumping data for table `fornecedor`
 --
 
 INSERT INTO `fornecedor` (`nome`, `cnpj`, `cep`, `logradouro`, `bairro`, `telefone`, `id`, `numero`, `complemento`, `cidade`, `estado`) VALUES
@@ -80,7 +103,7 @@ INSERT INTO `fornecedor` (`nome`, `cnpj`, `cep`, `logradouro`, `bairro`, `telefo
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Table structure for table `produto`
 --
 
 CREATE TABLE `produto` (
@@ -91,6 +114,14 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome`, `fabricante`, `preco`) VALUES
+(1, 'Pomada', 'Um Fabricante', 17.14),
+(2, 'talco', 'Um Fabricante', 17.14);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -98,6 +129,12 @@ CREATE TABLE `produto` (
 -- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `estoque`
+--
+ALTER TABLE `estoque`
   ADD PRIMARY KEY (`id`);
 
 --

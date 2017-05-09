@@ -13,7 +13,7 @@ import java.sql.SQLException;
  */
 public class Dados {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/engSoft";
+    private static final String URL = "jdbc:mysql://localhost:3306/engsoft";
 
     public Connection conexao(String nome, String senha) throws Exception {
         try {

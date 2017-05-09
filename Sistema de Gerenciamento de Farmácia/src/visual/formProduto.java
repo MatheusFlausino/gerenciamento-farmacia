@@ -7,8 +7,6 @@ package visual;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import sistema.de.gerenciamento.de.farmácia.Cliente;
-import sistema.de.gerenciamento.de.farmácia.DAOCliente;
 import sistema.de.gerenciamento.de.farmácia.DAOProduto;
 import sistema.de.gerenciamento.de.farmácia.Produto;
 
@@ -49,8 +47,6 @@ public class formProduto extends javax.swing.JFrame {
         atualizarProduto = new javax.swing.JButton();
         excluirProduto = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tituloProduto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         tituloProduto.setText("CADASTRO DO PRODUTO");
@@ -183,7 +179,8 @@ public class formProduto extends javax.swing.JFrame {
         Produto buscar = buscarProduto(id);
         nomeProduto.setText(buscar.getNomeProduto());
         codigoProduto.setText(String.valueOf(buscar.getIdProduto()));
-        precoProduto.setText(String.valueOf(buscar.getFabricanteProduto()));
+        precoProduto.setText(String.valueOf(buscar.getPrecoProduto()));
+        fabricanteProduto.setText(String.valueOf(buscar.getFabricanteProduto()));
         
     }//GEN-LAST:event_buscarProdutoActionPerformed
 
