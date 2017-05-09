@@ -46,7 +46,7 @@ public class DAOProduto {
                 temp.setNomeProduto(rs.getString("nome"));
                 temp.setIdProduto(rs.getInt("id"));
                 temp.setPrecoProduto(rs.getInt("preco"));
-                temp.setProdutoFabricante(rs.getString("fabricante"));
+                temp.setFabricanteProduto(rs.getString("fabricante"));
 
                 resultados.add(temp);
             }
@@ -69,7 +69,7 @@ public class DAOProduto {
                     temp.setNomeProduto(rs.getString("nome"));
                     temp.setIdProduto(rs.getInt("id"));
                     temp.setPrecoProduto(rs.getInt("preco"));
-                    temp.setProdutoFabricante(rs.getString("fabricante"));
+                    temp.setFabricanteProduto(rs.getString("fabricante"));
                     resultados = temp;
                 }
             }
@@ -81,7 +81,7 @@ public class DAOProduto {
 
     public boolean insere(Produto novoProduto) throws Exception {
         boolean retorno = false;
-        String sql = "INSERT INTO produto ( id, nome, preco, fabricante) VALUES(?,?,?)";
+        String sql = "INSERT INTO produto ( id, nome, preco, fabricante) VALUES(?,?,?,?)";
 
         try {
             conectar();
@@ -89,7 +89,7 @@ public class DAOProduto {
                 stmt.setInt(1, novoProduto.getIdProduto());
                 stmt.setString(2, novoProduto.getNomeProduto());
                 stmt.setDouble(3, novoProduto.getPrecoProduto());
-                stmt.setString(4, novoProduto.getProdutoFabricante());
+                stmt.setString(4, novoProduto.getFabricanteProduto());
 
                 stmt.executeUpdate();
                 stmt.close();
@@ -111,7 +111,7 @@ public class DAOProduto {
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, atuaProduto.getNomeProduto());
                 stmt.setDouble(2, atuaProduto.getPrecoProduto());
-                stmt.setString(3, atuaProduto.getProdutoFabricante());
+                stmt.setString(3, atuaProduto.getFabricanteProduto());
                 stmt.setInt(4, atuaProduto.getIdProduto());
 
                 stmt.executeUpdate();

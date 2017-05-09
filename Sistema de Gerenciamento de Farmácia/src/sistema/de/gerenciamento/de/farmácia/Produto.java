@@ -30,14 +30,6 @@ public class Produto implements Serializable {
         }
     }
 
-    public String getFabricanteProduto() {
-        return fabricanteProduto;
-    }
-
-    public void setFabricanteProduto(String fabricanteProduto) {
-        this.fabricanteProduto = fabricanteProduto;
-    }
-
 
     public int getIdProduto() {
         return idProduto;
@@ -63,11 +55,11 @@ public class Produto implements Serializable {
         }
     }
 
-    public String getProdutoFabricante() {
+    public String getFabricanteProduto() {
         return fabricanteProduto;
     }
 
-    public void setProdutoFabricante(String fabricanteProduto) throws Exception {
+    public void setFabricanteProduto(String fabricanteProduto) throws Exception {
         if (fabricanteProduto.isEmpty()) {
             throw new Exception("Nome Invalido");
         } else if (fabricanteProduto.length() < 25) {

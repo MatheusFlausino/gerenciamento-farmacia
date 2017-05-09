@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="WIN-8S9CCKMCFEK" name="sistema.de.gerenciamento.de.farmácia.DadosTest" skipped="0" tests="1" time="0.265" timestamp="2017-05-01T21:31:10">
+<testsuite errors="0" failures="0" hostname="WIN-8S9CCKMCFEK" name="sistema.de.gerenciamento.de.farmácia.DadosTest" skipped="0" tests="1" time="0.259" timestamp="2017-05-08T23:22:49">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="BR" />
@@ -55,7 +55,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner sistema.de.gerenciamento.de.farmácia.DadosTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\test\results\TEST-sistema.de.gerenciamento.de.farmácia.DadosTest.xml crashfile=C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\junitvmwatcher7778322302350325488.properties propsfile=C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\junit599018639313891415.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner sistema.de.gerenciamento.de.farmácia.DadosTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\test\results\TEST-sistema.de.gerenciamento.de.farmácia.DadosTest.xml crashfile=C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\junitvmwatcher7084014406535369547.properties propsfile=C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\junit422486071182893728.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -222,7 +222,6 @@
     <property name="ant.file.Sistema_de_Gerenciamento_de_Farmácia" value="C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build.xml" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
     <property name="netbeans.user" value="C:\Users\mathe_56ugtvf\AppData\Roaming\NetBeans\8.2" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="C:\Users\MATHE_~1\AppData\Local\Temp\" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -290,8 +289,8 @@
     <property name="jdk.launcher.addexports.4" value="java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.3" value="java.desktop/sun.awt.im=ALL-UNNAMED" />
     <property name="work.dir" value="C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia" />
-    <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
     <property name="libs.jaxb.classpath" value="C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\activation.jar;C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
+    <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.1" value="java.base/jdk.internal.jrtfs=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.0" value="java.desktop/sun.awt=ALL-UNNAMED" />
     <property name="do.depend" value="false" />
@@ -300,12 +299,12 @@
     <property name="libs.swing-layout.classpath" value="C:\Program Files (x86)\NetBeans 8.2\platform\modules\ext\swing-layout-1.0.4.jar" />
     <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
     <property name="libs.restlib.src" value="" />
-    <property name="build.generated.dir" value="build/generated" />
     <property name="javac.source" value="1.8" />
+    <property name="build.generated.dir" value="build/generated" />
     <property name="line.separator" value="&#xd;&#xa;" />
     <property name="java.specification.version" value="1.8" />
-    <property name="java.vm.info" value="mixed mode" />
     <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="java.vm.info" value="mixed mode" />
     <property name="nb.junit.batch" value="true" />
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_121\jre\classes" />
@@ -313,9 +312,9 @@
     <property name="built-jar.properties" value="C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
-    <property name="annotation.processing.enabled" value="true" />
-    <property name="libs.jpa2-persistence.src" value="" />
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
+    <property name="libs.jpa2-persistence.src" value="" />
+    <property name="annotation.processing.enabled" value="true" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.jsf12.src" value="" />
@@ -333,23 +332,23 @@
     <property name="ant.file.Sistema_de_Gerenciamento_de_Farmácia-impl" value="C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\nbproject\build-impl.xml" />
     <property name="libs.MySQLDriver.src" value="" />
     <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="java.runtime.version" value="1.8.0_121-b13" />
     <property name="build.test.results.dir" value="build/test/results" />
+    <property name="java.runtime.version" value="1.8.0_121-b13" />
     <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="C:\Program Files (x86)\NetBeans 8.2\platform\modules\ext\junit-4.12.jar" />
     <property name="user.timezone" value="" />
     <property name="nb.junit.single" value="false" />
-    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="libs.JAVADB_DRIVER_LABEL.javadoc" value="" />
+    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="netbeans.dirs" value="C:\Program Files (x86)\NetBeans 8.2\nb;C:\Program Files (x86)\NetBeans 8.2\ergonomics;C:\Program Files (x86)\NetBeans 8.2\ide;C:\Program Files (x86)\NetBeans 8.2\extide;C:\Program Files (x86)\NetBeans 8.2\java;C:\Program Files (x86)\NetBeans 8.2\apisupport;C:\Program Files (x86)\NetBeans 8.2\webcommon;C:\Program Files (x86)\NetBeans 8.2\websvccommon;C:\Program Files (x86)\NetBeans 8.2\enterprise;C:\Program Files (x86)\NetBeans 8.2\mobility;C:\Program Files (x86)\NetBeans 8.2\profiler;C:\Program Files (x86)\NetBeans 8.2\python;C:\Program Files (x86)\NetBeans 8.2\php;C:\Program Files (x86)\NetBeans 8.2\identity;C:\Program Files (x86)\NetBeans 8.2\harness;C:\Program Files (x86)\NetBeans 8.2\cnd;C:\Program Files (x86)\NetBeans 8.2\cndext;C:\Program Files (x86)\NetBeans 8.2\dlight;C:\Program Files (x86)\NetBeans 8.2\groovy;C:\Program Files (x86)\NetBeans 8.2\extra;C:\Program Files (x86)\NetBeans 8.2\javacard;C:\Program Files (x86)\NetBeans 8.2\javafx" />
-    <property name="libs.jsf20.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.jstl.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.jsf20.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
     <property name="libs.metro.src" value="" />
     <property name="libs.absolutelayout.classpath" value="C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.metro.classpath" value="C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\activation.jar;C:\Program Files (x86)\NetBeans 8.2\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files (x86)\NetBeans 8.2\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files (x86)\NetBeans 8.2\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files (x86)\NetBeans 8.2\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files (x86)\NetBeans 8.2\enterprise\modules\ext\metro\webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.jpa2-persistence.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
     <property name="java.class.path" value="C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\classes;C:\Program Files (x86)\NetBeans 8.2\platform\modules\ext\junit-4.12.jar;C:\Program Files (x86)\NetBeans 8.2\platform\modules\ext\hamcrest-core-1.3.jar;C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\build\test\classes;C:\Program Files\Java\jre1.8.0_121\lib\mysql-connector-java-5.1.41-bin.jar;C:\Program Files (x86)\NetBeans 8.2\extide\ant\lib\ant-launcher.jar;C:\Program Files (x86)\NetBeans 8.2\extide\ant\lib\ant.jar;C:\Program Files (x86)\NetBeans 8.2\extide\ant\lib\ant-junit.jar;C:\Program Files (x86)\NetBeans 8.2\extide\ant\lib\ant-junit4.jar;C:\Users\mathe_56ugtvf\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar" />
@@ -360,16 +359,16 @@
     <property name="application.args" value="" />
     <property name="libs.EclipseLink-GlassFish-v3.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.javaee-api-7.0.maven-pom" value="" />
-    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="main.class.available" value="true" />
+    <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="sun.desktop" value="windows" />
     <property name="libs.hibernate4-persistence.src" value="" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="libs.Comet-GlassFish-v3.src" value="" />
     <property name="libs.restlib.javadoc" value="" />
     <property name="libs.JAXB-ENDORSED.classpath" value="C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="libs.eclipselink.classpath" value="C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\eclipselink\eclipselink.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="libs.javaee-api-7.0.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.eclipselink.classpath" value="C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\eclipselink\eclipselink.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="libs.beans-binding.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
@@ -377,13 +376,13 @@
     <property name="libs.spring-framework300.classpath" value="C:\Program Files (x86)\NetBeans 8.2\ide\modules\org-apache-commons-logging.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\cglib-2.2.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
     <property name="libs.jsp-compiler.maven-pom" value="" />
     <property name="libs.hamcrest.src" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\mathe_56ugtvf\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=sistema.*:visual.*:sistema.de.*:sistema.de.gerenciamento.*:sistema.de.gerenciamento.de.*:sistema.de.gerenciamento.de.farmácia.*,destfile=&quot;C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\jacoco.exec-277842413066582&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\mathe_56ugtvf\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=sistema.*:visual.*:sistema.de.*:sistema.de.gerenciamento.*:sistema.de.gerenciamento.de.*:sistema.de.gerenciamento.de.farmácia.*,destfile=&quot;C:\Users\mathe_56ugtvf\Documents\engSoft\sprint2\gerenciamento-farmacia\Sistema de Gerenciamento de Farmácia\jacoco.exec-22378878708913&quot;" />
     <property name="libs.hibernate4-persistence.classpath" value="C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\antlr-2.7.7.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\dom4j-1.6.1.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar;C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpa-2.1-api-1.0.0.Final.jar" />
-    <property name="dist.archive.excludes" value="" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
+    <property name="dist.archive.excludes" value="" />
     <property name="libs.testng.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\platform\docs\testng-6.8.1-javadoc.zip" />
-    <property name="user.script" value="" />
     <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files (x86)\NetBeans 8.2\ide\modules\ext\postgresql-9.4.1209.jar" />
+    <property name="user.script" value="" />
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="C:\Program Files (x86)\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -401,7 +400,7 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files (x86)\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="sistema.de.gerenciamento.de.farmácia.DadosTest" name="testConexao" time="0.213" />
+  <testcase classname="sistema.de.gerenciamento.de.farmácia.DadosTest" name="testConexao" time="0.211" />
   <system-out><![CDATA[conexao
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -57,7 +57,6 @@ public class DAOClienteTest {
         } catch (Exception ex) {
             assertEquals(expResult, ex.getMessage());
         }
-        
     }
     @Test
     public void testInsereInvalido2(){
