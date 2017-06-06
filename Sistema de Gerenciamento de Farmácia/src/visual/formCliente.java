@@ -6,8 +6,11 @@
 package visual;
 
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import sistema.de.gerenciamento.de.farmácia.Cliente;
 import sistema.de.gerenciamento.de.farmácia.DAOCliente;
@@ -366,20 +369,25 @@ public final class formCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
-        // TODO add your handling code here:
-        int id = Integer.parseInt(codigoCliente.getText());
-        Cliente buscar = buscarCliente(id);
-        nomeCliente.setText(buscar.getNomeCliente() );
-        cpfCliente.setText(buscar.getCpfCliente() );
-        dataNascCliente.setText(String.valueOf(buscar.getDataNascCliente()));
-        cepCliente.setText(buscar.getCepCliente() );
-        logradouroCliente.setText(buscar.getLogradouroCliente() );
-        numeroCliente.setText(String.valueOf(buscar.getNumeroCliente()));
-        bairroCliente.setText(buscar.getBairroCliente() );
-        cidadeCliente.setText(buscar.getCidadeCliente() );
-        complementoCliente.setText(buscar.getComplementoCliente() );
-        estadoCliente.setText(buscar.getEstadoCliente() );
-        telefoneCliente.setText(buscar.getTelefoneCliente() );
+        try {
+            // TODO add your handling code here:
+            int id = Integer.parseInt(codigoCliente.getText());
+            SimpleDateFormat ft = new SimpleDateFormat("dd/MM/yyyy");
+            Cliente buscar = buscarCliente(id);
+            nomeCliente.setText(buscar.getNomeCliente() );
+            cpfCliente.setText(buscar.getCpfCliente() );
+            dataNascCliente.setText(ft.format(buscar.getDataNascCliente()));
+            cepCliente.setText(buscar.getCepCliente() );
+            logradouroCliente.setText(buscar.getLogradouroCliente() );
+            numeroCliente.setText(String.valueOf(buscar.getNumeroCliente()));
+            bairroCliente.setText(buscar.getBairroCliente() );
+            cidadeCliente.setText(buscar.getCidadeCliente() );
+            complementoCliente.setText(buscar.getComplementoCliente() );
+            estadoCliente.setText(buscar.getEstadoCliente() );
+            telefoneCliente.setText(buscar.getTelefoneCliente() );
+        } catch (Exception ex) {
+            imprimeMsg("Erro ao Buscar usuário ");
+        }
     }//GEN-LAST:event_buscarClienteActionPerformed
 
     private void cepClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cepClienteActionPerformed

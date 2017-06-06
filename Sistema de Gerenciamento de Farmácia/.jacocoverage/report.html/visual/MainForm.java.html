@@ -40,197 +40,218 @@ public class MainForm extends javax.swing.JFrame {
 <span class="nc" id="L40">        gerenciarCliente = new javax.swing.JMenuItem();</span>
 <span class="nc" id="L41">        gerenciarFornecedor = new javax.swing.JMenuItem();</span>
 <span class="nc" id="L42">        gerenciarProduto = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L43">        exit = new javax.swing.JMenu();</span>
-<span class="nc" id="L44">        sairSistema = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L43">        estoque = new javax.swing.JMenu();</span>
+<span class="nc" id="L44">        exit = new javax.swing.JMenu();</span>
+<span class="nc" id="L45">        sairSistema = new javax.swing.JMenuItem();</span>
 
-<span class="nc" id="L46">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L47">        setTitle(&quot;Gerenciamento de Farmácia&quot;);</span>
+<span class="nc" id="L47">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L48">        setTitle(&quot;Gerenciamento de Farmácia&quot;);</span>
 
-<span class="nc" id="L49">        jPanel1.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L50">        jPanel1.setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L51">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
-<span class="nc" id="L52">        jPanel1.setLayout(jPanel1Layout);</span>
-<span class="nc" id="L53">        jPanel1Layout.setHorizontalGroup(</span>
-<span class="nc" id="L54">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L55">            .addGap(0, 523, Short.MAX_VALUE)</span>
+<span class="nc" id="L52">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L53">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L54">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L55">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L56">            .addGap(0, 523, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L57">        jPanel1Layout.setVerticalGroup(</span>
-<span class="nc" id="L58">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L59">            .addGap(0, 327, Short.MAX_VALUE)</span>
-        );
-
-<span class="nc" id="L62">        novo.setText(&quot;Novo&quot;);</span>
-
-<span class="nc" id="L64">        novoCliente.setText(&quot;Cliente&quot;);</span>
-<span class="nc" id="L65">        novoCliente.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L67">                novoClienteActionPerformed(evt);</span>
-<span class="nc" id="L68">            }</span>
-        });
-<span class="nc" id="L70">        novo.add(novoCliente);</span>
-
-<span class="nc" id="L72">        novoFornecedor.setText(&quot;Fornecedor&quot;);</span>
-<span class="nc" id="L73">        novoFornecedor.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L75">                novoFornecedorActionPerformed(evt);</span>
-<span class="nc" id="L76">            }</span>
-        });
-<span class="nc" id="L78">        novo.add(novoFornecedor);</span>
-
-<span class="nc" id="L80">        novoProduto.setText(&quot;Produto&quot;);</span>
-<span class="nc" id="L81">        novoProduto.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L83">                novoProdutoActionPerformed(evt);</span>
-<span class="nc" id="L84">            }</span>
-        });
-<span class="nc" id="L86">        novo.add(novoProduto);</span>
-
-<span class="nc" id="L88">        jMenuBar1.add(novo);</span>
-
-<span class="nc" id="L90">        gerenciar.setText(&quot;Gerenciar&quot;);</span>
-
-<span class="nc" id="L92">        gerenciarCliente.setText(&quot;Cliente&quot;);</span>
-<span class="nc" id="L93">        gerenciarCliente.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L95">                gerenciarClienteActionPerformed(evt);</span>
-<span class="nc" id="L96">            }</span>
-        });
-<span class="nc" id="L98">        gerenciar.add(gerenciarCliente);</span>
-
-<span class="nc" id="L100">        gerenciarFornecedor.setText(&quot;Fornecedor&quot;);</span>
-<span class="nc" id="L101">        gerenciarFornecedor.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L103">                gerenciarFornecedorActionPerformed(evt);</span>
-<span class="nc" id="L104">            }</span>
-        });
-<span class="nc" id="L106">        gerenciar.add(gerenciarFornecedor);</span>
-
-<span class="nc" id="L108">        gerenciarProduto.setText(&quot;Produto&quot;);</span>
-<span class="nc" id="L109">        gerenciarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L111">                gerenciarProdutoActionPerformed(evt);</span>
-<span class="nc" id="L112">            }</span>
-        });
-<span class="nc" id="L114">        gerenciar.add(gerenciarProduto);</span>
-
-<span class="nc" id="L116">        jMenuBar1.add(gerenciar);</span>
-
-<span class="nc" id="L118">        exit.setText(&quot;Sair&quot;);</span>
-<span class="nc" id="L119">        exit.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L121">                exitActionPerformed(evt);</span>
-<span class="nc" id="L122">            }</span>
-        });
-
-<span class="nc" id="L125">        sairSistema.setText(&quot;Sair do Sistema&quot;);</span>
-<span class="nc" id="L126">        sairSistema.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L128">                sairSistemaActionPerformed(evt);</span>
-<span class="nc" id="L129">            }</span>
-        });
-<span class="nc" id="L131">        exit.add(sairSistema);</span>
-
-<span class="nc" id="L133">        jMenuBar1.add(exit);</span>
-
-<span class="nc" id="L135">        setJMenuBar(jMenuBar1);</span>
-
-<span class="nc" id="L137">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L138">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L139">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L140">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L141">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L142">                .addContainerGap(61, Short.MAX_VALUE)</span>
-<span class="nc" id="L143">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L144">                .addGap(62, 62, 62))</span>
-        );
-<span class="nc" id="L146">        layout.setVerticalGroup(</span>
-<span class="nc" id="L147">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L148">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L149">                .addGap(64, 64, 64)</span>
-<span class="nc" id="L150">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L151">                .addContainerGap(67, Short.MAX_VALUE))</span>
+<span class="nc" id="L58">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L59">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L60">            .addGap(0, 327, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L154">        pack();</span>
-<span class="nc" id="L155">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L63">        novo.setText(&quot;Novo&quot;);</span>
+
+<span class="nc" id="L65">        novoCliente.setText(&quot;Cliente&quot;);</span>
+<span class="nc" id="L66">        novoCliente.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L68">                novoClienteActionPerformed(evt);</span>
+<span class="nc" id="L69">            }</span>
+        });
+<span class="nc" id="L71">        novo.add(novoCliente);</span>
+
+<span class="nc" id="L73">        novoFornecedor.setText(&quot;Fornecedor&quot;);</span>
+<span class="nc" id="L74">        novoFornecedor.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L76">                novoFornecedorActionPerformed(evt);</span>
+<span class="nc" id="L77">            }</span>
+        });
+<span class="nc" id="L79">        novo.add(novoFornecedor);</span>
+
+<span class="nc" id="L81">        novoProduto.setText(&quot;Produto&quot;);</span>
+<span class="nc" id="L82">        novoProduto.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L84">                novoProdutoActionPerformed(evt);</span>
+<span class="nc" id="L85">            }</span>
+        });
+<span class="nc" id="L87">        novo.add(novoProduto);</span>
+
+<span class="nc" id="L89">        jMenuBar1.add(novo);</span>
+
+<span class="nc" id="L91">        gerenciar.setText(&quot;Gerenciar&quot;);</span>
+
+<span class="nc" id="L93">        gerenciarCliente.setText(&quot;Cliente&quot;);</span>
+<span class="nc" id="L94">        gerenciarCliente.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L96">                gerenciarClienteActionPerformed(evt);</span>
+<span class="nc" id="L97">            }</span>
+        });
+<span class="nc" id="L99">        gerenciar.add(gerenciarCliente);</span>
+
+<span class="nc" id="L101">        gerenciarFornecedor.setText(&quot;Fornecedor&quot;);</span>
+<span class="nc" id="L102">        gerenciarFornecedor.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L104">                gerenciarFornecedorActionPerformed(evt);</span>
+<span class="nc" id="L105">            }</span>
+        });
+<span class="nc" id="L107">        gerenciar.add(gerenciarFornecedor);</span>
+
+<span class="nc" id="L109">        gerenciarProduto.setText(&quot;Produto&quot;);</span>
+<span class="nc" id="L110">        gerenciarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L112">                gerenciarProdutoActionPerformed(evt);</span>
+<span class="nc" id="L113">            }</span>
+        });
+<span class="nc" id="L115">        gerenciar.add(gerenciarProduto);</span>
+
+<span class="nc" id="L117">        jMenuBar1.add(gerenciar);</span>
+
+<span class="nc" id="L119">        estoque.setText(&quot;Estoque&quot;);</span>
+<span class="nc" id="L120">        estoque.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L122">                estoqueMouseClicked(evt);</span>
+<span class="nc" id="L123">            }</span>
+        });
+<span class="nc" id="L125">        jMenuBar1.add(estoque);</span>
+
+<span class="nc" id="L127">        exit.setText(&quot;Sair&quot;);</span>
+<span class="nc" id="L128">        exit.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L130">                exitActionPerformed(evt);</span>
+<span class="nc" id="L131">            }</span>
+        });
+
+<span class="nc" id="L134">        sairSistema.setText(&quot;Sair do Sistema&quot;);</span>
+<span class="nc" id="L135">        sairSistema.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L137">                sairSistemaActionPerformed(evt);</span>
+<span class="nc" id="L138">            }</span>
+        });
+<span class="nc" id="L140">        exit.add(sairSistema);</span>
+
+<span class="nc" id="L142">        jMenuBar1.add(exit);</span>
+
+<span class="nc" id="L144">        setJMenuBar(jMenuBar1);</span>
+
+<span class="nc" id="L146">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L147">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L148">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L149">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L150">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L151">                .addContainerGap(61, Short.MAX_VALUE)</span>
+<span class="nc" id="L152">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L153">                .addGap(62, 62, 62))</span>
+        );
+<span class="nc" id="L155">        layout.setVerticalGroup(</span>
+<span class="nc" id="L156">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L157">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L158">                .addGap(64, 64, 64)</span>
+<span class="nc" id="L159">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L160">                .addContainerGap(67, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L163">        pack();</span>
+<span class="nc" id="L164">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void gerenciarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarClienteActionPerformed
         // TODO add your handling code here:
         formCliente form;
         try {
-<span class="nc" id="L161">            form = new formCliente();</span>
-<span class="nc" id="L162">            form.setVisible(true);</span>
-<span class="nc" id="L163">        } catch (Exception ex) {</span>
-<span class="nc" id="L164">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L165">        }</span>
-<span class="nc" id="L166">    }//GEN-LAST:event_gerenciarClienteActionPerformed</span>
+<span class="nc" id="L170">            form = new formCliente();</span>
+<span class="nc" id="L171">            form.setVisible(true);</span>
+<span class="nc" id="L172">        } catch (Exception ex) {</span>
+<span class="nc" id="L173">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L174">        }</span>
+<span class="nc" id="L175">    }//GEN-LAST:event_gerenciarClienteActionPerformed</span>
 
     private void novoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoClienteActionPerformed
         // TODO add your handling code here:
         formCliente form;
         try {
-<span class="nc" id="L172">            form = new formCliente();</span>
-<span class="nc" id="L173">            form.setCodigo(true);</span>
-<span class="nc" id="L174">            form.setVisible(true);</span>
-<span class="nc" id="L175">        } catch (Exception ex) {</span>
-<span class="nc" id="L176">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L177">        }</span>
-<span class="nc" id="L178">    }//GEN-LAST:event_novoClienteActionPerformed</span>
+<span class="nc" id="L181">            form = new formCliente();</span>
+<span class="nc" id="L182">            form.setCodigo(true);</span>
+<span class="nc" id="L183">            form.setVisible(true);</span>
+<span class="nc" id="L184">        } catch (Exception ex) {</span>
+<span class="nc" id="L185">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L186">        }</span>
+<span class="nc" id="L187">    }//GEN-LAST:event_novoClienteActionPerformed</span>
 
     private void gerenciarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarFornecedorActionPerformed
         // TODO add your handling code here:
         formFornecedor form;
         try {
-<span class="nc" id="L184">            form = new formFornecedor();</span>
-<span class="nc" id="L185">            form.setVisible(true);</span>
-<span class="nc" id="L186">        } catch (Exception ex) {</span>
-<span class="nc" id="L187">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L188">        }</span>
-<span class="nc" id="L189">    }//GEN-LAST:event_gerenciarFornecedorActionPerformed</span>
+<span class="nc" id="L193">            form = new formFornecedor();</span>
+<span class="nc" id="L194">            form.setVisible(true);</span>
+<span class="nc" id="L195">            form.setCodigo(false);</span>
+<span class="nc" id="L196">        } catch (Exception ex) {</span>
+<span class="nc" id="L197">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L198">        }</span>
+<span class="nc" id="L199">    }//GEN-LAST:event_gerenciarFornecedorActionPerformed</span>
 
     private void novoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoFornecedorActionPerformed
         // TODO add your handling code here:
         formFornecedor form;
         try {
-<span class="nc" id="L195">            form = new formFornecedor();</span>
-<span class="nc" id="L196">            form.setCodigo(true);</span>
-<span class="nc" id="L197">            form.setVisible(true);</span>
-<span class="nc" id="L198">        } catch (Exception ex) {</span>
-<span class="nc" id="L199">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L200">        }</span>
-<span class="nc" id="L201">    }//GEN-LAST:event_novoFornecedorActionPerformed</span>
+<span class="nc" id="L205">            form = new formFornecedor();</span>
+<span class="nc" id="L206">            form.setCodigo(true);</span>
+<span class="nc" id="L207">            form.setVisible(true);</span>
+<span class="nc" id="L208">        } catch (Exception ex) {</span>
+<span class="nc" id="L209">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L210">        }</span>
+<span class="nc" id="L211">    }//GEN-LAST:event_novoFornecedorActionPerformed</span>
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
 
-<span class="nc" id="L205">        System.exit(0);</span>
-<span class="nc" id="L206">    }//GEN-LAST:event_exitActionPerformed</span>
+<span class="nc" id="L215">        System.exit(0);</span>
+<span class="nc" id="L216">    }//GEN-LAST:event_exitActionPerformed</span>
 
     private void novoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoProdutoActionPerformed
         // TODO add your handling code here:
         formProduto form;
         try {
-<span class="nc" id="L212">            form = new formProduto();</span>
-<span class="nc" id="L213">            form.setCodigo(true);</span>
-<span class="nc" id="L214">            form.setVisible(true);</span>
-<span class="nc" id="L215">        } catch (Exception ex) {</span>
-<span class="nc" id="L216">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L217">        }</span>
-<span class="nc" id="L218">    }//GEN-LAST:event_novoProdutoActionPerformed</span>
+<span class="nc" id="L222">            form = new formProduto();</span>
+<span class="nc" id="L223">            form.setCodigo(true);</span>
+<span class="nc" id="L224">            form.setVisible(true);</span>
+<span class="nc" id="L225">        } catch (Exception ex) {</span>
+<span class="nc" id="L226">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L227">        }</span>
+<span class="nc" id="L228">    }//GEN-LAST:event_novoProdutoActionPerformed</span>
 
     private void sairSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairSistemaActionPerformed
-<span class="nc" id="L221">        System.exit(0);</span>
-<span class="nc" id="L222">    }//GEN-LAST:event_sairSistemaActionPerformed</span>
+<span class="nc" id="L231">        System.exit(0);</span>
+<span class="nc" id="L232">    }//GEN-LAST:event_sairSistemaActionPerformed</span>
 
     private void gerenciarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarProdutoActionPerformed
         formProduto form;
         try {
-<span class="nc" id="L227">            form = new formProduto();</span>
-<span class="nc" id="L228">            form.setCodigo(true);</span>
-<span class="nc" id="L229">            form.setVisible(true);</span>
-<span class="nc" id="L230">        } catch (Exception ex) {</span>
-<span class="nc" id="L231">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="nc" id="L232">        }</span>
-<span class="nc" id="L233">    }//GEN-LAST:event_gerenciarProdutoActionPerformed</span>
+<span class="nc" id="L237">            form = new formProduto();</span>
+<span class="nc" id="L238">            form.setVisible(true);</span>
+<span class="nc" id="L239">            form.setCodigo(false);</span>
+<span class="nc" id="L240">        } catch (Exception ex) {</span>
+<span class="nc" id="L241">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L242">        }</span>
+<span class="nc" id="L243">    }//GEN-LAST:event_gerenciarProdutoActionPerformed</span>
+
+    private void estoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estoqueMouseClicked
+        // TODO add your handling code here:
+        formEstoque form;
+        try {
+<span class="nc" id="L249">            form = new formEstoque();</span>
+<span class="nc" id="L250">            form.setVisible(true);</span>
+<span class="nc" id="L251">        } catch (Exception ex) {</span>
+<span class="nc" id="L252">            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L253">        }</span>
+<span class="nc" id="L254">    }//GEN-LAST:event_estoqueMouseClicked</span>
 
     /**
      * @param args the command line arguments
@@ -242,32 +263,33 @@ public class MainForm extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L245" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L246" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L247">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L248">                    break;</span>
+<span class="nc bnc" id="L266" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L267" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L268">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L269">                    break;</span>
                 }
             }
-<span class="nc" id="L251">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L252">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L253">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L254">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L255">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L256">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L257">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L258">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L259">        }</span>
+<span class="nc" id="L272">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L273">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L274">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L275">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L276">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L277">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L278">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L279">            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L280">        }</span>
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L263">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L284">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L265">                new MainForm().setVisible(true);</span>
-<span class="nc" id="L266">            }</span>
+<span class="nc" id="L286">                new MainForm().setVisible(true);</span>
+<span class="nc" id="L287">            }</span>
         });
-<span class="nc" id="L268">    }</span>
+<span class="nc" id="L289">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu estoque;
     private javax.swing.JMenu exit;
     private javax.swing.JMenu gerenciar;
     private javax.swing.JMenuItem gerenciarCliente;

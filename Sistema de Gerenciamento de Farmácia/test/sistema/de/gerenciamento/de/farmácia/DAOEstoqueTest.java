@@ -79,7 +79,7 @@ public class DAOEstoqueTest {
     
     @Test
     public void testInsereInvalido5(){
-        String expResult = "Quantidade Invalida";
+        String expResult = "ID Invalido";
         try {
             novoEstoque(2).setIdProduto(0);
             fail("Devia lancar Exception");

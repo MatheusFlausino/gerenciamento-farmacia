@@ -59,6 +59,8 @@ public class formEstoque extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         qtdEstoque = new javax.swing.JTextField();
 
+        setTitle("CADASTRO DO ESTOQUE");
+
         jLabel8.setText("Código produto");
 
         jLabel12.setText("Fabricante Produto");

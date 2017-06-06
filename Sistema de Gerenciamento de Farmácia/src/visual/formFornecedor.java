@@ -69,7 +69,7 @@ public final class formFornecedor extends javax.swing.JFrame {
         codigoFornecedor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("CADASTRO DO CLIENTE");
+        setTitle("CADASTRO DO FORNECEDOR");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);

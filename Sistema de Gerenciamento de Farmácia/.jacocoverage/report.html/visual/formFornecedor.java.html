@@ -69,7 +69,7 @@ public final class formFornecedor extends javax.swing.JFrame {
 <span class="nc" id="L69">        codigoFornecedor = new javax.swing.JTextField();</span>
 
 <span class="nc" id="L71">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
-<span class="nc" id="L72">        setTitle(&quot;CADASTRO DO CLIENTE&quot;);</span>
+<span class="nc" id="L72">        setTitle(&quot;CADASTRO DO FORNECEDOR&quot;);</span>
 <span class="nc" id="L73">        addWindowListener(new java.awt.event.WindowAdapter() {</span>
             public void windowOpened(java.awt.event.WindowEvent evt) {
 <span class="nc" id="L75">                formWindowOpened(evt);</span>
@@ -126,10 +126,10 @@ public final class formFornecedor extends javax.swing.JFrame {
 <span class="nc" id="L126">        }</span>
 
 <span class="nc" id="L128">        jLabel12.setLabelFor(cpfFornecedor);</span>
-<span class="nc" id="L129">        jLabel12.setText(&quot;CPF&quot;);</span>
+<span class="nc" id="L129">        jLabel12.setText(&quot;CNPJ&quot;);</span>
 
         try {
-<span class="nc" id="L132">            cpfFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter(&quot;###.###.###-##&quot;)));</span>
+<span class="nc" id="L132">            cpfFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter(&quot;##.###.###/####-##&quot;)));</span>
 <span class="nc" id="L133">        } catch (java.text.ParseException ex) {</span>
 <span class="nc" id="L134">            ex.printStackTrace();</span>
 <span class="nc" id="L135">        }</span>
@@ -427,48 +427,47 @@ public final class formFornecedor extends javax.swing.JFrame {
     
     private Fornecedor getFornecedor() throws ParseException, Exception{
 <span class="nc" id="L429">        Fornecedor novoFornecedor = new Fornecedor();</span>
-<span class="nc" id="L430">        SimpleDateFormat format = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
         
-<span class="nc" id="L432">        novoFornecedor.setIdFornecedor(Integer.parseInt(codigoFornecedor.getText()));</span>
-<span class="nc" id="L433">        novoFornecedor.setNomeFornecedor(nomeFornecedor.getText());</span>
-<span class="nc" id="L434">        novoFornecedor.setCnpjFornecedor(cpfFornecedor.getText());</span>
-<span class="nc" id="L435">        novoFornecedor.setCepFornecedor(cepFornecedor.getText());</span>
-<span class="nc" id="L436">        novoFornecedor.setBairroFornecedor(bairroFornecedor.getText());</span>
-<span class="nc" id="L437">        novoFornecedor.setCidadeFornecedor(cidadeFornecedor.getText());</span>
-<span class="nc" id="L438">        novoFornecedor.setComplementoFornecedor(complementoFornecedor.getText());</span>
-<span class="nc" id="L439">        novoFornecedor.setLogradouroFornecedor(logradouroFornecedor.getText());</span>
-<span class="nc" id="L440">        novoFornecedor.setEstadoFornecedor(estadoFornecedor.getText());</span>
-<span class="nc" id="L441">        novoFornecedor.setNumeroFornecedor(Integer.parseInt(numeroFornecedor.getText()));</span>
-<span class="nc" id="L442">        novoFornecedor.setTelefoneFornecedor(telefoneFornecedor.getText());</span>
+<span class="nc" id="L431">        novoFornecedor.setIdFornecedor(Integer.parseInt(codigoFornecedor.getText()));</span>
+<span class="nc" id="L432">        novoFornecedor.setNomeFornecedor(nomeFornecedor.getText());</span>
+<span class="nc" id="L433">        novoFornecedor.setCnpjFornecedor(cpfFornecedor.getText());</span>
+<span class="nc" id="L434">        novoFornecedor.setCepFornecedor(cepFornecedor.getText());</span>
+<span class="nc" id="L435">        novoFornecedor.setBairroFornecedor(bairroFornecedor.getText());</span>
+<span class="nc" id="L436">        novoFornecedor.setCidadeFornecedor(cidadeFornecedor.getText());</span>
+<span class="nc" id="L437">        novoFornecedor.setComplementoFornecedor(complementoFornecedor.getText());</span>
+<span class="nc" id="L438">        novoFornecedor.setLogradouroFornecedor(logradouroFornecedor.getText());</span>
+<span class="nc" id="L439">        novoFornecedor.setEstadoFornecedor(estadoFornecedor.getText());</span>
+<span class="nc" id="L440">        novoFornecedor.setNumeroFornecedor(Integer.parseInt(numeroFornecedor.getText()));</span>
+<span class="nc" id="L441">        novoFornecedor.setTelefoneFornecedor(telefoneFornecedor.getText());</span>
         
-<span class="nc" id="L444">        return novoFornecedor;</span>
+<span class="nc" id="L443">        return novoFornecedor;</span>
     }
     public void setCodigo(boolean id) throws Exception{
-<span class="nc" id="L447">        int codigo = 0;</span>
-<span class="nc bnc" id="L448" title="All 2 branches missed.">        if(id){</span>
-<span class="nc" id="L449">            DAOFornecedor daoFornecedor = new DAOFornecedor();</span>
-<span class="nc" id="L450">            ArrayList&lt;Fornecedor&gt; lista = daoFornecedor.buscarTodos();</span>
-<span class="nc" id="L451">            Fornecedor e = lista.get(lista.size() - 1);</span>
-<span class="nc" id="L452">            codigo = e.getIdFornecedor() + 1;</span>
-<span class="nc" id="L453">            codigoFornecedor.disable();</span>
+<span class="nc" id="L446">        int codigo = 0;</span>
+<span class="nc bnc" id="L447" title="All 2 branches missed.">        if(id){</span>
+<span class="nc" id="L448">            DAOFornecedor daoFornecedor = new DAOFornecedor();</span>
+<span class="nc" id="L449">            ArrayList&lt;Fornecedor&gt; lista = daoFornecedor.buscarTodos();</span>
+<span class="nc" id="L450">            Fornecedor e = lista.get(lista.size() - 1);</span>
+<span class="nc" id="L451">            codigo = e.getIdFornecedor() + 1;</span>
+<span class="nc" id="L452">            codigoFornecedor.disable();</span>
         }
-<span class="nc" id="L455">        codigoFornecedor.setText(String.valueOf(codigo));</span>
-<span class="nc" id="L456">    }</span>
+<span class="nc" id="L454">        codigoFornecedor.setText(String.valueOf(codigo));</span>
+<span class="nc" id="L455">    }</span>
     
     private Fornecedor buscarFornecedor(){
-<span class="nc" id="L459">        DAOFornecedor daoFornecedor = new DAOFornecedor();</span>
+<span class="nc" id="L458">        DAOFornecedor daoFornecedor = new DAOFornecedor();</span>
         
         try {
-<span class="nc" id="L462">            return daoFornecedor.buscar(Integer.parseInt(codigoFornecedor.getText()));</span>
-<span class="nc" id="L463">        } catch (Exception ex) {</span>
-<span class="nc" id="L464">            System.out.print(&quot;Erro ao Buscar Fornecedor: &quot;+ ex.getMessage());</span>
+<span class="nc" id="L461">            return daoFornecedor.buscar(Integer.parseInt(codigoFornecedor.getText()));</span>
+<span class="nc" id="L462">        } catch (Exception ex) {</span>
+<span class="nc" id="L463">            System.out.print(&quot;Erro ao Buscar Fornecedor: &quot;+ ex.getMessage());</span>
         }
-<span class="nc" id="L466">        return null;</span>
+<span class="nc" id="L465">        return null;</span>
     }
     
     private void imprimeMsg(String msg) {  
-<span class="nc" id="L470">        JOptionPane.showMessageDialog(null, msg, &quot;Notificação&quot;, 0);  </span>
-<span class="nc" id="L471">    } </span>
+<span class="nc" id="L469">        JOptionPane.showMessageDialog(null, msg, &quot;Notificação&quot;, 0);  </span>
+<span class="nc" id="L470">    } </span>
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarCliente;

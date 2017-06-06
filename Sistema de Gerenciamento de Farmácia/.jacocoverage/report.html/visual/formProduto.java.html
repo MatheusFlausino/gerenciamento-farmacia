@@ -7,8 +7,6 @@ package visual;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import sistema.de.gerenciamento.de.farmácia.Cliente;
-import sistema.de.gerenciamento.de.farmácia.DAOCliente;
 import sistema.de.gerenciamento.de.farmácia.DAOProduto;
 import sistema.de.gerenciamento.de.farmácia.Produto;
 
@@ -21,9 +19,9 @@ public class formProduto extends javax.swing.JFrame {
     /**
      * Creates new form formProduto
      */
-<span class="nc" id="L24">    public formProduto() {</span>
-<span class="nc" id="L25">        initComponents();</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L22">    public formProduto() {</span>
+<span class="nc" id="L23">        initComponents();</span>
+<span class="nc" id="L24">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,205 +32,206 @@ public class formProduto extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L37">        tituloProduto = new javax.swing.JLabel();</span>
-<span class="nc" id="L38">        jLabel1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L39">        nomeProduto = new javax.swing.JTextField();</span>
-<span class="nc" id="L40">        buscarProduto = new javax.swing.JButton();</span>
-<span class="nc" id="L41">        jLabel8 = new javax.swing.JLabel();</span>
-<span class="nc" id="L42">        codigoProduto = new javax.swing.JTextField();</span>
-<span class="nc" id="L43">        jLabel12 = new javax.swing.JLabel();</span>
-<span class="nc" id="L44">        fabricanteProduto = new javax.swing.JTextField();</span>
-<span class="nc" id="L45">        jLabel13 = new javax.swing.JLabel();</span>
-<span class="nc" id="L46">        precoProduto = new javax.swing.JTextField();</span>
-<span class="nc" id="L47">        salvarProduto = new javax.swing.JButton();</span>
-<span class="nc" id="L48">        reset = new javax.swing.JButton();</span>
-<span class="nc" id="L49">        atualizarProduto = new javax.swing.JButton();</span>
-<span class="nc" id="L50">        excluirProduto = new javax.swing.JButton();</span>
-<span class="nc" id="L51">        exit = new javax.swing.JButton();</span>
+<span class="nc" id="L35">        tituloProduto = new javax.swing.JLabel();</span>
+<span class="nc" id="L36">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        nomeProduto = new javax.swing.JTextField();</span>
+<span class="nc" id="L38">        buscarProduto = new javax.swing.JButton();</span>
+<span class="nc" id="L39">        jLabel8 = new javax.swing.JLabel();</span>
+<span class="nc" id="L40">        codigoProduto = new javax.swing.JTextField();</span>
+<span class="nc" id="L41">        jLabel12 = new javax.swing.JLabel();</span>
+<span class="nc" id="L42">        fabricanteProduto = new javax.swing.JTextField();</span>
+<span class="nc" id="L43">        jLabel13 = new javax.swing.JLabel();</span>
+<span class="nc" id="L44">        precoProduto = new javax.swing.JTextField();</span>
+<span class="nc" id="L45">        salvarProduto = new javax.swing.JButton();</span>
+<span class="nc" id="L46">        reset = new javax.swing.JButton();</span>
+<span class="nc" id="L47">        atualizarProduto = new javax.swing.JButton();</span>
+<span class="nc" id="L48">        excluirProduto = new javax.swing.JButton();</span>
+<span class="nc" id="L49">        exit = new javax.swing.JButton();</span>
 
-<span class="nc" id="L53">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L51">        setTitle(&quot;CADASTRO DO PRODUTO&quot;);</span>
 
-<span class="nc" id="L55">        tituloProduto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L56">        tituloProduto.setText(&quot;CADASTRO DO PRODUTO&quot;);</span>
+<span class="nc" id="L53">        tituloProduto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L54">        tituloProduto.setText(&quot;CADASTRO DO PRODUTO&quot;);</span>
 
-<span class="nc" id="L58">        jLabel1.setText(&quot;Nome&quot;);</span>
+<span class="nc" id="L56">        jLabel1.setText(&quot;Nome&quot;);</span>
 
-<span class="nc" id="L60">        buscarProduto.setText(&quot;Buscar&quot;);</span>
-<span class="nc" id="L61">        buscarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L58">        buscarProduto.setText(&quot;Buscar&quot;);</span>
+<span class="nc" id="L59">        buscarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L63">                buscarProdutoActionPerformed(evt);</span>
-<span class="nc" id="L64">            }</span>
+<span class="nc" id="L61">                buscarProdutoActionPerformed(evt);</span>
+<span class="nc" id="L62">            }</span>
         });
 
-<span class="nc" id="L67">        jLabel8.setText(&quot;Código&quot;);</span>
+<span class="nc" id="L65">        jLabel8.setText(&quot;Código&quot;);</span>
 
-<span class="nc" id="L69">        jLabel12.setText(&quot;Fabricante&quot;);</span>
+<span class="nc" id="L67">        jLabel12.setText(&quot;Fabricante&quot;);</span>
 
-<span class="nc" id="L71">        jLabel13.setText(&quot;Preço&quot;);</span>
+<span class="nc" id="L69">        jLabel13.setText(&quot;Preço&quot;);</span>
 
-<span class="nc" id="L73">        salvarProduto.setText(&quot;Salvar&quot;);</span>
-<span class="nc" id="L74">        salvarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L71">        salvarProduto.setText(&quot;Salvar&quot;);</span>
+<span class="nc" id="L72">        salvarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L76">                salvarProdutoActionPerformed(evt);</span>
-<span class="nc" id="L77">            }</span>
+<span class="nc" id="L74">                salvarProdutoActionPerformed(evt);</span>
+<span class="nc" id="L75">            }</span>
         });
 
-<span class="nc" id="L80">        reset.setText(&quot;Limpar&quot;);</span>
-<span class="nc" id="L81">        reset.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L78">        reset.setText(&quot;Limpar&quot;);</span>
+<span class="nc" id="L79">        reset.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L83">                resetActionPerformed(evt);</span>
-<span class="nc" id="L84">            }</span>
+<span class="nc" id="L81">                resetActionPerformed(evt);</span>
+<span class="nc" id="L82">            }</span>
         });
 
-<span class="nc" id="L87">        atualizarProduto.setText(&quot;Atualizar&quot;);</span>
-<span class="nc" id="L88">        atualizarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L85">        atualizarProduto.setText(&quot;Atualizar&quot;);</span>
+<span class="nc" id="L86">        atualizarProduto.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L90">                atualizarProdutoActionPerformed(evt);</span>
-<span class="nc" id="L91">            }</span>
+<span class="nc" id="L88">                atualizarProdutoActionPerformed(evt);</span>
+<span class="nc" id="L89">            }</span>
         });
 
-<span class="nc" id="L94">        excluirProduto.setText(&quot;Excluir&quot;);</span>
-<span class="nc" id="L95">        excluirProduto.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L92">        excluirProduto.setText(&quot;Excluir&quot;);</span>
+<span class="nc" id="L93">        excluirProduto.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L97">                excluirProdutoActionPerformed(evt);</span>
-<span class="nc" id="L98">            }</span>
+<span class="nc" id="L95">                excluirProdutoActionPerformed(evt);</span>
+<span class="nc" id="L96">            }</span>
         });
 
-<span class="nc" id="L101">        exit.setText(&quot;Voltar&quot;);</span>
-<span class="nc" id="L102">        exit.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L99">        exit.setText(&quot;Voltar&quot;);</span>
+<span class="nc" id="L100">        exit.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L104">                exitActionPerformed(evt);</span>
-<span class="nc" id="L105">            }</span>
+<span class="nc" id="L102">                exitActionPerformed(evt);</span>
+<span class="nc" id="L103">            }</span>
         });
 
-<span class="nc" id="L108">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L109">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L110">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L111">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L112">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L113">                .addGap(39, 39, 39)</span>
-<span class="nc" id="L114">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L115">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L116">                        .addComponent(salvarProduto)</span>
+<span class="nc" id="L106">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L107">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L108">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L109">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L110">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L111">                .addGap(39, 39, 39)</span>
+<span class="nc" id="L112">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L113">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L114">                        .addComponent(salvarProduto)</span>
+<span class="nc" id="L115">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L116">                        .addComponent(atualizarProduto)</span>
 <span class="nc" id="L117">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L118">                        .addComponent(atualizarProduto)</span>
+<span class="nc" id="L118">                        .addComponent(excluirProduto)</span>
 <span class="nc" id="L119">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L120">                        .addComponent(excluirProduto)</span>
-<span class="nc" id="L121">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L122">                        .addComponent(reset)</span>
-<span class="nc" id="L123">                        .addGap(70, 70, 70)</span>
-<span class="nc" id="L124">                        .addComponent(exit))</span>
-<span class="nc" id="L125">                    .addComponent(tituloProduto)</span>
-<span class="nc" id="L126">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L127">                        .addGap(19, 19, 19)</span>
-<span class="nc" id="L128">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L129">                            .addComponent(jLabel1)</span>
-<span class="nc" id="L130">                            .addComponent(jLabel12)</span>
-<span class="nc" id="L131">                            .addComponent(jLabel8)</span>
-<span class="nc" id="L132">                            .addComponent(jLabel13))</span>
-<span class="nc" id="L133">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L134">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L135">                            .addComponent(precoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L136">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
-<span class="nc" id="L137">                                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L138">                                    .addComponent(codigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L139">                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L140">                                    .addComponent(buscarProduto))</span>
-<span class="nc" id="L141">                                .addComponent(nomeProduto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)</span>
-<span class="nc" id="L142">                                .addComponent(fabricanteProduto, javax.swing.GroupLayout.Alignment.LEADING)))))</span>
-<span class="nc" id="L143">                .addContainerGap(74, Short.MAX_VALUE))</span>
+<span class="nc" id="L120">                        .addComponent(reset)</span>
+<span class="nc" id="L121">                        .addGap(70, 70, 70)</span>
+<span class="nc" id="L122">                        .addComponent(exit))</span>
+<span class="nc" id="L123">                    .addComponent(tituloProduto)</span>
+<span class="nc" id="L124">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L125">                        .addGap(19, 19, 19)</span>
+<span class="nc" id="L126">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L127">                            .addComponent(jLabel1)</span>
+<span class="nc" id="L128">                            .addComponent(jLabel12)</span>
+<span class="nc" id="L129">                            .addComponent(jLabel8)</span>
+<span class="nc" id="L130">                            .addComponent(jLabel13))</span>
+<span class="nc" id="L131">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L132">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L133">                            .addComponent(precoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L134">                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L135">                                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L136">                                    .addComponent(codigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L137">                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L138">                                    .addComponent(buscarProduto))</span>
+<span class="nc" id="L139">                                .addComponent(nomeProduto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)</span>
+<span class="nc" id="L140">                                .addComponent(fabricanteProduto, javax.swing.GroupLayout.Alignment.LEADING)))))</span>
+<span class="nc" id="L141">                .addContainerGap(74, Short.MAX_VALUE))</span>
         );
-<span class="nc" id="L145">        layout.setVerticalGroup(</span>
-<span class="nc" id="L146">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L147">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L148">                .addGap(14, 14, 14)</span>
-<span class="nc" id="L149">                .addComponent(tituloProduto)</span>
-<span class="nc" id="L150">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L151">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L152">                    .addComponent(jLabel8)</span>
-<span class="nc" id="L153">                    .addComponent(codigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L154">                    .addComponent(buscarProduto))</span>
-<span class="nc" id="L155">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L156">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L157">                    .addComponent(jLabel1)</span>
-<span class="nc" id="L158">                    .addComponent(nomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L159">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L160">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L161">                    .addComponent(jLabel12)</span>
-<span class="nc" id="L162">                    .addComponent(fabricanteProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L163">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L164">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L165">                    .addComponent(precoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L166">                    .addComponent(jLabel13))</span>
-<span class="nc" id="L167">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)</span>
-<span class="nc" id="L168">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L169">                    .addComponent(salvarProduto)</span>
-<span class="nc" id="L170">                    .addComponent(atualizarProduto)</span>
-<span class="nc" id="L171">                    .addComponent(excluirProduto)</span>
-<span class="nc" id="L172">                    .addComponent(exit)</span>
-<span class="nc" id="L173">                    .addComponent(reset))</span>
-<span class="nc" id="L174">                .addGap(46, 46, 46))</span>
+<span class="nc" id="L143">        layout.setVerticalGroup(</span>
+<span class="nc" id="L144">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L146">                .addGap(14, 14, 14)</span>
+<span class="nc" id="L147">                .addComponent(tituloProduto)</span>
+<span class="nc" id="L148">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L149">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L150">                    .addComponent(jLabel8)</span>
+<span class="nc" id="L151">                    .addComponent(codigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L152">                    .addComponent(buscarProduto))</span>
+<span class="nc" id="L153">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L154">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L155">                    .addComponent(jLabel1)</span>
+<span class="nc" id="L156">                    .addComponent(nomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L157">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L158">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L159">                    .addComponent(jLabel12)</span>
+<span class="nc" id="L160">                    .addComponent(fabricanteProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L161">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L162">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L163">                    .addComponent(precoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L164">                    .addComponent(jLabel13))</span>
+<span class="nc" id="L165">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)</span>
+<span class="nc" id="L166">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L167">                    .addComponent(salvarProduto)</span>
+<span class="nc" id="L168">                    .addComponent(atualizarProduto)</span>
+<span class="nc" id="L169">                    .addComponent(excluirProduto)</span>
+<span class="nc" id="L170">                    .addComponent(exit)</span>
+<span class="nc" id="L171">                    .addComponent(reset))</span>
+<span class="nc" id="L172">                .addGap(46, 46, 46))</span>
         );
 
-<span class="nc" id="L177">        pack();</span>
-<span class="nc" id="L178">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L175">        pack();</span>
+<span class="nc" id="L176">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void buscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarProdutoActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L182">        int id = Integer.parseInt(codigoProduto.getText());</span>
-<span class="nc" id="L183">        Produto buscar = buscarProduto(id);</span>
-<span class="nc" id="L184">        nomeProduto.setText(buscar.getNomeProduto());</span>
-<span class="nc" id="L185">        codigoProduto.setText(String.valueOf(buscar.getIdProduto()));</span>
-<span class="nc" id="L186">        precoProduto.setText(String.valueOf(buscar.getFabricanteProduto()));</span>
+<span class="nc" id="L180">        int id = Integer.parseInt(codigoProduto.getText());</span>
+<span class="nc" id="L181">        Produto buscar = buscarProduto(id);</span>
+<span class="nc" id="L182">        nomeProduto.setText(buscar.getNomeProduto());</span>
+<span class="nc" id="L183">        codigoProduto.setText(String.valueOf(buscar.getIdProduto()));</span>
+<span class="nc" id="L184">        precoProduto.setText(String.valueOf(buscar.getPrecoProduto()));</span>
+<span class="nc" id="L185">        fabricanteProduto.setText(String.valueOf(buscar.getFabricanteProduto()));</span>
         
-<span class="nc" id="L188">    }//GEN-LAST:event_buscarProdutoActionPerformed</span>
+<span class="nc" id="L187">    }//GEN-LAST:event_buscarProdutoActionPerformed</span>
 
     private void salvarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarProdutoActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L192">        Produto novoProduto = null;</span>
+<span class="nc" id="L191">        Produto novoProduto = null;</span>
         
-<span class="nc" id="L194">        DAOProduto daoProduto = new DAOProduto();</span>
+<span class="nc" id="L193">        DAOProduto daoProduto = new DAOProduto();</span>
         try {
-<span class="nc" id="L196">            novoProduto = getProduto();</span>
-<span class="nc" id="L197">            daoProduto.insere(novoProduto);</span>
-<span class="nc" id="L198">            imprimeMsg(&quot;Produto Salvo com Sucesso&quot;);</span>
-<span class="nc" id="L199">        } catch (Exception ex) {</span>
-<span class="nc" id="L200">            System.out.print(&quot;Erro ao Salvar: &quot;+ ex.getMessage());</span>
-<span class="nc" id="L201">        }</span>
+<span class="nc" id="L195">            novoProduto = getProduto();</span>
+<span class="nc" id="L196">            daoProduto.insere(novoProduto);</span>
+<span class="nc" id="L197">            imprimeMsg(&quot;Produto Salvo com Sucesso&quot;);</span>
+<span class="nc" id="L198">        } catch (Exception ex) {</span>
+<span class="nc" id="L199">            System.out.print(&quot;Erro ao Salvar: &quot;+ ex.getMessage());</span>
+<span class="nc" id="L200">        }</span>
 
-<span class="nc" id="L203">    }//GEN-LAST:event_salvarProdutoActionPerformed</span>
+<span class="nc" id="L202">    }//GEN-LAST:event_salvarProdutoActionPerformed</span>
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L207">        resetText();</span>
-<span class="nc" id="L208">    }//GEN-LAST:event_resetActionPerformed</span>
+<span class="nc" id="L206">        resetText();</span>
+<span class="nc" id="L207">    }//GEN-LAST:event_resetActionPerformed</span>
 
     private void atualizarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarProdutoActionPerformed
         // TODO add your handling code here:
         try {
-<span class="nc" id="L213">            DAOProduto daoProduto = new DAOProduto();</span>
-<span class="nc" id="L214">            boolean result = daoProduto.atualizar(getProduto());</span>
-<span class="nc" id="L215">        } catch (Exception ex) {</span>
-<span class="nc" id="L216">            System.out.println(&quot;Erro ao Atualizar: &quot;+ ex.getMessage());</span>
-<span class="nc" id="L217">        }</span>
-<span class="nc" id="L218">    }//GEN-LAST:event_atualizarProdutoActionPerformed</span>
+<span class="nc" id="L212">            DAOProduto daoProduto = new DAOProduto();</span>
+<span class="nc" id="L213">            boolean result = daoProduto.atualizar(getProduto());</span>
+<span class="nc" id="L214">        } catch (Exception ex) {</span>
+<span class="nc" id="L215">            System.out.println(&quot;Erro ao Atualizar: &quot;+ ex.getMessage());</span>
+<span class="nc" id="L216">        }</span>
+<span class="nc" id="L217">    }//GEN-LAST:event_atualizarProdutoActionPerformed</span>
 
     private void excluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirProdutoActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L222">        DAOProduto daoProduto = new DAOProduto();</span>
+<span class="nc" id="L221">        DAOProduto daoProduto = new DAOProduto();</span>
         try {
-<span class="nc" id="L224">            Produto novoProduto = getProduto();</span>
-<span class="nc" id="L225">            daoProduto.apagar(novoProduto.getIdProduto());</span>
-<span class="nc" id="L226">            imprimeMsg(&quot;Produto Excluido com Sucesso&quot;);</span>
-<span class="nc" id="L227">        } catch (Exception ex) {</span>
-<span class="nc" id="L228">            System.out.print(&quot;Erro ao Atualizar: &quot;+ ex.getMessage());</span>
-<span class="nc" id="L229">        }</span>
-<span class="nc" id="L230">    }//GEN-LAST:event_excluirProdutoActionPerformed</span>
+<span class="nc" id="L223">            Produto novoProduto = getProduto();</span>
+<span class="nc" id="L224">            daoProduto.apagar(novoProduto.getIdProduto());</span>
+<span class="nc" id="L225">            imprimeMsg(&quot;Produto Excluido com Sucesso&quot;);</span>
+<span class="nc" id="L226">        } catch (Exception ex) {</span>
+<span class="nc" id="L227">            System.out.print(&quot;Erro ao Atualizar: &quot;+ ex.getMessage());</span>
+<span class="nc" id="L228">        }</span>
+<span class="nc" id="L229">    }//GEN-LAST:event_excluirProdutoActionPerformed</span>
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L234">        this.setVisible(false);</span>
-<span class="nc" id="L235">    }//GEN-LAST:event_exitActionPerformed</span>
+<span class="nc" id="L233">        this.setVisible(false);</span>
+<span class="nc" id="L234">    }//GEN-LAST:event_exitActionPerformed</span>
 
     /**
      * @param args the command line arguments
@@ -244,77 +243,77 @@ public class formProduto extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L247" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L248" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L249">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L250">                    break;</span>
+<span class="nc bnc" id="L246" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L247" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L248">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L249">                    break;</span>
                 }
             }
-<span class="nc" id="L253">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L254">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L255">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L256">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L257">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L258">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L259">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L260">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L261">        }</span>
+<span class="nc" id="L252">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L253">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L254">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L255">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L256">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L257">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L258">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L259">            java.util.logging.Logger.getLogger(formProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L260">        }</span>
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L265">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L264">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L267">                new formProduto().setVisible(true);</span>
-<span class="nc" id="L268">            }</span>
+<span class="nc" id="L266">                new formProduto().setVisible(true);</span>
+<span class="nc" id="L267">            }</span>
         });
-<span class="nc" id="L270">    }</span>
+<span class="nc" id="L269">    }</span>
     /*
      * Metodos criados 
      */
     private void resetText(){
-<span class="nc" id="L275">        nomeProduto.setText(&quot;&quot;);</span>
-<span class="nc" id="L276">        codigoProduto.setText(&quot;&quot;);</span>
-<span class="nc" id="L277">        fabricanteProduto.setText(&quot;&quot;);</span>
-<span class="nc" id="L278">        precoProduto.setText(&quot;&quot;);</span>
-<span class="nc" id="L279">    }</span>
+<span class="nc" id="L274">        nomeProduto.setText(&quot;&quot;);</span>
+<span class="nc" id="L275">        codigoProduto.setText(&quot;&quot;);</span>
+<span class="nc" id="L276">        fabricanteProduto.setText(&quot;&quot;);</span>
+<span class="nc" id="L277">        precoProduto.setText(&quot;&quot;);</span>
+<span class="nc" id="L278">    }</span>
     
     private Produto getProduto() throws Exception{
-<span class="nc" id="L282">        Produto novoProduto = new Produto();</span>
+<span class="nc" id="L281">        Produto novoProduto = new Produto();</span>
         
-<span class="nc" id="L284">        novoProduto.setIdProduto(Integer.parseInt(codigoProduto.getText()));</span>
-<span class="nc" id="L285">        novoProduto.setNomeProduto(nomeProduto.getText());</span>
-<span class="nc" id="L286">        novoProduto.setFabricanteProduto(fabricanteProduto.getText());</span>
-<span class="nc" id="L287">        novoProduto.setPrecoProduto(Double.parseDouble(precoProduto.getText()));</span>
+<span class="nc" id="L283">        novoProduto.setIdProduto(Integer.parseInt(codigoProduto.getText()));</span>
+<span class="nc" id="L284">        novoProduto.setNomeProduto(nomeProduto.getText());</span>
+<span class="nc" id="L285">        novoProduto.setFabricanteProduto(fabricanteProduto.getText());</span>
+<span class="nc" id="L286">        novoProduto.setPrecoProduto(Double.parseDouble(precoProduto.getText()));</span>
         
-<span class="nc" id="L289">        return novoProduto;</span>
+<span class="nc" id="L288">        return novoProduto;</span>
     }
     
      public void setCodigo(boolean id) throws Exception{
-<span class="nc" id="L293">        int codigo = 0;</span>
-<span class="nc" id="L294">        System.out.print(id);</span>
-<span class="nc bnc" id="L295" title="All 2 branches missed.">        if(id){</span>
-<span class="nc" id="L296">            DAOProduto daoProduto = new DAOProduto();</span>
-<span class="nc" id="L297">            ArrayList&lt;Produto&gt; lista = daoProduto.buscarTodos();</span>
-<span class="nc" id="L298">            Produto e = lista.get(lista.size() - 1);</span>
-<span class="nc" id="L299">            codigo = e.getIdProduto()+ 1;</span>
+<span class="nc" id="L292">        int codigo = 0;</span>
+<span class="nc" id="L293">        System.out.print(id);</span>
+<span class="nc bnc" id="L294" title="All 2 branches missed.">        if(id){</span>
+<span class="nc" id="L295">            DAOProduto daoProduto = new DAOProduto();</span>
+<span class="nc" id="L296">            ArrayList&lt;Produto&gt; lista = daoProduto.buscarTodos();</span>
+<span class="nc" id="L297">            Produto e = lista.get(lista.size() - 1);</span>
+<span class="nc" id="L298">            codigo = e.getIdProduto()+ 1;</span>
 
         }
-<span class="nc" id="L302">        codigoProduto.setText(String.valueOf(codigo));</span>
-<span class="nc" id="L303">    }</span>
+<span class="nc" id="L301">        codigoProduto.setText(String.valueOf(codigo));</span>
+<span class="nc" id="L302">    }</span>
     private Produto buscarProduto(int id){        
         try {
-<span class="nc" id="L306">            DAOProduto daoProduto = new DAOProduto();</span>
-<span class="nc" id="L307">            return daoProduto.buscar(id);</span>
-<span class="nc" id="L308">        } catch (Exception ex) {</span>
-<span class="nc" id="L309">            System.out.print(&quot;Erro ao Buscar Produto: &quot;+ ex.getMessage());</span>
+<span class="nc" id="L305">            DAOProduto daoProduto = new DAOProduto();</span>
+<span class="nc" id="L306">            return daoProduto.buscar(id);</span>
+<span class="nc" id="L307">        } catch (Exception ex) {</span>
+<span class="nc" id="L308">            System.out.print(&quot;Erro ao Buscar Produto: &quot;+ ex.getMessage());</span>
         }
-<span class="nc" id="L311">        return null;</span>
+<span class="nc" id="L310">        return null;</span>
     }
     
 
     private void imprimeMsg(String msg) {  
-<span class="nc" id="L316">        JOptionPane.showMessageDialog(null, msg, &quot;Notificação&quot;,  JOptionPane.INFORMATION_MESSAGE);  </span>
-<span class="nc" id="L317">    } </span>
+<span class="nc" id="L315">        JOptionPane.showMessageDialog(null, msg, &quot;Notificação&quot;,  JOptionPane.INFORMATION_MESSAGE);  </span>
+<span class="nc" id="L316">    } </span>
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarProduto;

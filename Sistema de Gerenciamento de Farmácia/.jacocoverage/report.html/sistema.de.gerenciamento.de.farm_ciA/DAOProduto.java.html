@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DAOProduto.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Sistema_de_Gerenciamento_de_Farm_cia&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sistema.de.gerenciamento.de.farmáciA</a> &gt; <span class="el_source">DAOProduto.java</span></div><h1>DAOProduto.java</h1><pre class="source lang-java linenums">/*
+ * Classes para troca de dados e conexão com banco de dados ( Produto )
+ */
+package sistema.de.gerenciamento.de.farmáciA;
+
+import sistema.de.gerenciamento.de.farmácia.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Pedro e Matheus
+ */
+<span class="fc" id="L17">public class DAOProduto {</span>
+
+<span class="fc" id="L19">    private Connection con = null;</span>
+    private static final String NOME = &quot;root&quot;,
+            SENHA = &quot;&quot;;
+
+    public void apagar(int id) throws Exception {
+        try {
+<span class="fc" id="L25">            conectar();</span>
+<span class="pc" id="L26">            try (PreparedStatement stmt = con.prepareStatement(&quot;DELETE FROM produto WHERE id = ?&quot;)) {</span>
+<span class="fc" id="L27">                stmt.setInt(1, id);</span>
+<span class="fc" id="L28">                stmt.executeUpdate();</span>
+<span class="fc" id="L29">                stmt.close();</span>
+<span class="pc bpc" id="L30" title="6 of 8 branches missed.">            }</span>
+<span class="nc" id="L31">        } catch (Exception e) {</span>
+<span class="nc" id="L32">            throw new Exception(&quot;Erro ao apagar Produto&quot;);</span>
+        } finally {
+<span class="pc" id="L34">            fechar();</span>
+<span class="fc" id="L35">        }</span>
+<span class="fc" id="L36">    }</span>
+
+    public ArrayList&lt;Produto&gt; buscarTodos() throws Exception {
+<span class="fc" id="L39">        ArrayList&lt;Produto&gt; resultados = new ArrayList&lt;&gt;();</span>
+        try {
+<span class="fc" id="L41">            conectar();</span>
+<span class="fc" id="L42">            PreparedStatement stmt = con.prepareStatement(&quot;SELECT * FROM produto&quot;);</span>
+<span class="fc" id="L43">            ResultSet rs = stmt.executeQuery();</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            while (rs.next()) {</span>
+<span class="fc" id="L45">                Produto temp = new Produto();</span>
+                // pega todos os atributos do Produto
+<span class="fc" id="L47">                temp.setNomeProduto(rs.getString(&quot;nome&quot;));</span>
+<span class="fc" id="L48">                temp.setIdProduto(rs.getInt(&quot;id&quot;));</span>
+<span class="fc" id="L49">                temp.setPrecoProduto(rs.getDouble(&quot;preco&quot;));</span>
+<span class="fc" id="L50">                temp.setFabricanteProduto(rs.getString(&quot;fabricante&quot;));</span>
+
+<span class="fc" id="L52">                resultados.add(temp);</span>
+<span class="fc" id="L53">            }</span>
+<span class="nc" id="L54">        } catch (SQLException e) {</span>
+<span class="nc" id="L55">            throw new Exception(&quot;Erro ao buscar Produto 1&quot;);</span>
+<span class="fc" id="L56">        }</span>
+<span class="fc" id="L57">        return resultados;</span>
+    }
+
+    public Produto buscar(int id) throws Exception {
+<span class="fc" id="L61">        Produto resultados = null;</span>
+        try {
+<span class="fc" id="L63">            conectar();</span>
+<span class="pc" id="L64">            try (PreparedStatement stmt = con.prepareStatement(&quot;SELECT * FROM produto WHERE id LIKE ? LIMIT 1&quot;)) {</span>
+<span class="fc" id="L65">                stmt.setInt(1, id);</span>
+<span class="fc" id="L66">                ResultSet rs = stmt.executeQuery();</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">                while (rs.next()) {</span>
+<span class="fc" id="L68">                    Produto temp = new Produto();</span>
+                    // pega todos os atributos do Produto
+<span class="fc" id="L70">                    temp.setNomeProduto(rs.getString(&quot;nome&quot;));</span>
+<span class="fc" id="L71">                    temp.setIdProduto(rs.getInt(&quot;id&quot;));</span>
+<span class="fc" id="L72">                    temp.setPrecoProduto(rs.getDouble(&quot;preco&quot;));</span>
+<span class="fc" id="L73">                    temp.setFabricanteProduto(rs.getString(&quot;fabricante&quot;));</span>
+<span class="fc" id="L74">                    resultados = temp;</span>
+<span class="fc" id="L75">                }</span>
+<span class="pc bpc" id="L76" title="6 of 8 branches missed.">            }</span>
+<span class="nc" id="L77">        } catch (Exception e) {</span>
+<span class="nc" id="L78">            throw new Exception(&quot;Erro ao buscar Produto&quot;);</span>
+<span class="fc" id="L79">        }</span>
+<span class="fc" id="L80">        return resultados;</span>
+    }
+
+    public boolean insere(Produto novoProduto) throws Exception {
+<span class="fc" id="L84">        boolean retorno = false;</span>
+<span class="fc" id="L85">        String sql = &quot;INSERT INTO produto ( id, nome, preco, fabricante) VALUES(?,?,?,?)&quot;;</span>
+
+        try {
+<span class="fc" id="L88">            conectar();</span>
+<span class="fc" id="L89">            try (PreparedStatement stmt = con.prepareStatement(sql)) {</span>
+<span class="fc" id="L90">                stmt.setInt(1, novoProduto.getIdProduto());</span>
+<span class="fc" id="L91">                stmt.setString(2, novoProduto.getNomeProduto());</span>
+<span class="fc" id="L92">                stmt.setDouble(3, novoProduto.getPrecoProduto());</span>
+<span class="fc" id="L93">                stmt.setString(4, novoProduto.getFabricanteProduto());</span>
+
+<span class="fc" id="L95">                stmt.executeUpdate();</span>
+<span class="fc" id="L96">                stmt.close();</span>
+<span class="pc bpc" id="L97" title="4 of 8 branches missed.">            }</span>
+<span class="fc" id="L98">            retorno = true;</span>
+<span class="fc" id="L99">        } catch (Exception e) {</span>
+<span class="fc" id="L100">            throw new Exception(&quot;Erro ao inserir Produto&quot;);</span>
+        } finally {
+<span class="fc" id="L102">            fechar();</span>
+<span class="fc" id="L103">        }</span>
+<span class="fc" id="L104">        return retorno;</span>
+    }
+
+    public boolean atualizar(Produto atuaProduto) throws Exception {
+<span class="fc" id="L108">        boolean retorno = false;</span>
+<span class="fc" id="L109">        String sql = &quot;UPDATE produto SET nome = ? , preco = ?, fabricante = ? WHERE  id = ?&quot;;</span>
+        try {
+<span class="fc" id="L111">            conectar();</span>
+<span class="fc" id="L112">            try (PreparedStatement stmt = con.prepareStatement(sql)) {</span>
+<span class="fc" id="L113">                stmt.setString(1, atuaProduto.getNomeProduto());</span>
+<span class="fc" id="L114">                stmt.setDouble(2, atuaProduto.getPrecoProduto());</span>
+<span class="fc" id="L115">                stmt.setString(3, atuaProduto.getFabricanteProduto());</span>
+<span class="fc" id="L116">                stmt.setInt(4, atuaProduto.getIdProduto());</span>
+
+<span class="fc" id="L118">                stmt.executeUpdate();</span>
+<span class="fc" id="L119">                stmt.close();</span>
+<span class="pc bpc" id="L120" title="4 of 8 branches missed.">            }</span>
+<span class="fc" id="L121">            retorno = true;</span>
+<span class="fc" id="L122">        } catch (Exception e) {</span>
+<span class="fc" id="L123">            throw new Exception(&quot;Erro ao Atualizar&quot;);</span>
+        } finally {
+<span class="fc" id="L125">            fechar();</span>
+<span class="fc" id="L126">        }</span>
+<span class="fc" id="L127">        return retorno;</span>
+    }
+
+    private void conectar() throws Exception {
+<span class="fc" id="L131">        con = new Dados().conexao(NOME, SENHA);</span>
+<span class="fc" id="L132">        System.out.println(&quot;Conectado!&quot;);</span>
+<span class="fc" id="L133">    }</span>
+
+    private void fechar() throws Exception {
+        try {
+<span class="fc" id="L137">            con.close();</span>
+<span class="fc" id="L138">            System.out.println(&quot;Conexão Fechada&quot;);</span>
+<span class="nc" id="L139">        } catch (SQLException e) {</span>
+<span class="nc" id="L140">            throw new Exception(&quot;Erro ao fechar conexão&quot;);</span>
+<span class="fc" id="L141">        }</span>
+<span class="fc" id="L142">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

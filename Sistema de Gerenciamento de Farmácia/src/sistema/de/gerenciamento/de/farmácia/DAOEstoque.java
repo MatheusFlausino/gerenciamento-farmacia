@@ -106,7 +106,7 @@ public class DAOEstoque {
 
     public boolean atualizar(Estoque atuaEstoque) throws Exception {
         boolean retorno = false;
-        String sql = "UPDATE estoque SET idFornecedor = ?, qtd = ?, idProduto WHERE  id = ?";
+        String sql = "UPDATE estoque SET idFornecedor = ?, qtd = ?, idProduto = ? WHERE  id = ?";
         try {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement(sql)) {

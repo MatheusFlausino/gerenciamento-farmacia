@@ -21,6 +21,7 @@ public class formProduto extends javax.swing.JFrame {
      */
     public formProduto() {
         initComponents();
+        resetText();
     }
 
     /**
@@ -47,6 +48,8 @@ public class formProduto extends javax.swing.JFrame {
         atualizarProduto = new javax.swing.JButton();
         excluirProduto = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+
+        setTitle("CADASTRO DO PRODUTO");
 
         tituloProduto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         tituloProduto.setText("CADASTRO DO PRODUTO");
