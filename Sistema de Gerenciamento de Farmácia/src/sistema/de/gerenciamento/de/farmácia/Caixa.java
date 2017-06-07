@@ -13,11 +13,11 @@ import java.util.Date;
  */
 public class Caixa {
 
-    private int valorCaixa;
+    private double valorCaixa;
     private Date dataCaixa;
     private int idCaixa;
 
-    public int getValorCaixa() {
+    public double getValorCaixa() {
         return valorCaixa;
     }
 
@@ -29,7 +29,7 @@ public class Caixa {
         return idCaixa;
     }
 
-    public void setValorCaixa(int valorCaixa) throws Exception {
+    public void setValorCaixa(double valorCaixa) throws Exception {
         if (valorCaixa >= 0) {
             this.valorCaixa = valorCaixa;
         } else {
@@ -47,7 +47,7 @@ public class Caixa {
     }
 
     public void setIdCaixa(int idCaixa) throws Exception {
-        if (idCaixa >= 0) {
+        if (idCaixa > 0) {
             this.idCaixa = idCaixa;
         } else {
             throw new Exception("ID Invalido");

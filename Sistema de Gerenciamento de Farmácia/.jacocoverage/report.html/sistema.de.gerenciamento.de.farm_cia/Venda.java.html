@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Venda.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Sistema_de_Gerenciamento_de_Farm_cia&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sistema.de.gerenciamento.de.farmácia</a> &gt; <span class="el_source">Venda.java</span></div><h1>Venda.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sistema.de.gerenciamento.de.farmácia;
+
+import java.util.Date;
+
+/**
+ *
+ * @author matheusflausino
+ */
+<span class="fc" id="L14">public class Venda {</span>
+    private String idVenda;
+    private int idCliente;
+    private String tipoPagVenda;
+    private Date dataVenda;
+    private double totalVenda;
+    private double descontoVenda;
+
+    public String getIdVenda() {
+<span class="fc" id="L23">        return idVenda;</span>
+    }
+
+    public void setIdVenda(String idVenda) throws Exception {
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (idVenda.length() &gt; 0) {</span>
+<span class="fc" id="L28">            this.idVenda = idVenda;</span>
+        } else {
+<span class="fc" id="L30">            throw new Exception(&quot;ID Invalido&quot;);</span>
+        }
+<span class="fc" id="L32">    }</span>
+
+    public String getTipoPagVenda() {
+<span class="fc" id="L35">        return tipoPagVenda;</span>
+    }
+
+    public void setTipoPagVenda(String tipoPagVenda) throws Exception {
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (tipoPagVenda.isEmpty()) {</span>
+<span class="fc" id="L40">            throw new Exception(&quot;Pagamento Invalido&quot;);</span>
+        } else {
+<span class="fc" id="L42">            this.tipoPagVenda = tipoPagVenda;</span>
+        }
+<span class="fc" id="L44">    }</span>
+
+    public Date getDataVenda() {
+<span class="fc" id="L47">        return dataVenda;</span>
+    }
+
+    public void setDataVenda(Date dataVenda) throws Exception {
+<span class="fc" id="L51">        Date dt = new Date();</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (dataVenda.after(dt)) {</span>
+<span class="fc" id="L53">            throw new Exception(&quot;Data Invalida&quot;);</span>
+        } else {
+<span class="fc" id="L55">            this.dataVenda = dataVenda;</span>
+        }
+<span class="fc" id="L57">    }</span>
+
+    public double getTotalVenda() {
+<span class="fc" id="L60">        return totalVenda;</span>
+    }
+
+    public void setTotalVenda(double totalVenda) throws Exception {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (totalVenda &gt; 0) {</span>
+<span class="fc" id="L65">            this.totalVenda = totalVenda;</span>
+        } else {
+<span class="fc" id="L67">            throw new Exception(&quot;Valor Invalido&quot;);</span>
+        }
+<span class="fc" id="L69">    }</span>
+
+    public double getDescontoVenda() {
+<span class="fc" id="L72">        return descontoVenda;</span>
+    }
+
+    public void setDescontoVenda(double descontoVenda) throws Exception {
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (descontoVenda &gt;= 0) {</span>
+<span class="fc" id="L77">            this.descontoVenda = descontoVenda;</span>
+        } else {
+<span class="fc" id="L79">            throw new Exception(&quot;Desconto Invalido&quot;);</span>
+        }
+<span class="fc" id="L81">    }</span>
+
+    public int getIdCliente() {
+<span class="fc" id="L84">        return idCliente;</span>
+    }
+
+    public void setIdCliente(int idCliente) throws Exception {
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (idCliente &gt; 0) {</span>
+<span class="fc" id="L89">            this.idCliente = idCliente;</span>
+        } else {
+<span class="fc" id="L91">            throw new Exception(&quot;ID Invalido&quot;);</span>
+        }
+<span class="fc" id="L93">    }</span>
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

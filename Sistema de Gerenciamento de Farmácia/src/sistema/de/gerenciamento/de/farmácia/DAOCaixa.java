@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sistema.de.gerenciamento.de.farmácia;
 
 import java.sql.Connection;
@@ -48,7 +44,7 @@ public class DAOCaixa {
                 // pega todos os atributos do Cliente
                 temp.setIdCaixa(rs.getInt("id"));
                 temp.setDataCaixa(new Date(rs.getDate("data").getTime()));
-                temp.setValorCaixa(rs.getInt("valor"));
+                temp.setValorCaixa(rs.getDouble("valor"));
 
                 resultados.add(temp);
             }
@@ -70,7 +66,7 @@ public class DAOCaixa {
                     // pega todos os atributos do Cliente
                     temp.setIdCaixa(rs.getInt("id"));
                     temp.setDataCaixa(new Date(rs.getDate("data").getTime()));
-                    temp.setValorCaixa(rs.getInt("valor"));
+                    temp.setValorCaixa(rs.getDouble("valor"));
                     resultados = temp;
                 }
             }
@@ -82,14 +78,14 @@ public class DAOCaixa {
 
     public boolean insere(Caixa pessoaCaixa) throws Exception {
         boolean retorno = false;
-        String sql = "INSERT INTO caixa ( id, data, valor)" + "VALUES(?,?,?)";
+        String sql = "INSERT INTO caixa(id,data,valor)VALUES(?,?,?)";
 
         try {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
-                stmt.setInt(0, pessoaCaixa.getIdCaixa());
-                stmt.setDate(1, (Date) pessoaCaixa.getDataCaixa());
-                stmt.setInt(2, pessoaCaixa.getValorCaixa());
+                stmt.setInt(1, pessoaCaixa.getIdCaixa());
+                stmt.setDate(2, (Date) pessoaCaixa.getDataCaixa());
+                stmt.setDouble(3, pessoaCaixa.getValorCaixa());
                 stmt.executeUpdate();
                 stmt.close();
             }
@@ -104,14 +100,14 @@ public class DAOCaixa {
 
     public boolean atualizar(Caixa pessoaCaixa) throws Exception {
         boolean retorno = false;
-        String sql = "UPDATE caixa SET valor = ?, data = ? WHERE  id = ?";
+        String sql = "UPDATE caixa SET data = ?, valor = ? WHERE  id = ?";
         try {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
 
-                stmt.setDate(0, (Date) pessoaCaixa.getDataCaixa());
-                stmt.setInt(1, pessoaCaixa.getValorCaixa());
-                stmt.setInt(2, pessoaCaixa.getIdCaixa());
+                stmt.setDate(1, (Date) pessoaCaixa.getDataCaixa());
+                stmt.setDouble(2, pessoaCaixa.getValorCaixa());
+                stmt.setInt(3, pessoaCaixa.getIdCaixa());
                 stmt.executeUpdate();
                 stmt.close();
             }

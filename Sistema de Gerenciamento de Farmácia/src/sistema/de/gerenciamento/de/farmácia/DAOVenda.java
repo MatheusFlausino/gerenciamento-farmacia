@@ -68,16 +68,15 @@ public class DAOVenda {
         return resultados;
     }
 
-    public Venda buscar(int id) throws Exception {
+    public Venda buscar(String id) throws Exception {
         Venda resultados = null;
         try {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM venda WHERE idVenda LIKE ? LIMIT 1")) {
-                stmt.setInt(1, id);
+                stmt.setString(1, id);
                 ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
                     Venda temp = new Venda();
-                    // pega todos os atributos do Venda
                     temp.setIdVenda(rs.getString("idVenda"));
                     temp.setIdCliente(rs.getInt("idCliente"));
                     temp.setTipoPagVenda(rs.getString("tipoPagamento"));

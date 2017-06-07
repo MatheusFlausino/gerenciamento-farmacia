@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Caixa.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Sistema_de_Gerenciamento_de_Farm_cia&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">sistema.de.gerenciamento.de.farmácia</a> &gt; <span class="el_source">Caixa.java</span></div><h1>Caixa.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sistema.de.gerenciamento.de.farmácia;
+
+import java.util.Date;
+
+/**
+ *
+ * @author pedro canassa
+ */
+<span class="fc" id="L14">public class Caixa {</span>
+
+    private double valorCaixa;
+    private Date dataCaixa;
+    private int idCaixa;
+
+    public double getValorCaixa() {
+<span class="fc" id="L21">        return valorCaixa;</span>
+    }
+
+    public Date getDataCaixa() {
+<span class="fc" id="L25">        return dataCaixa;</span>
+    }
+
+    public int getIdCaixa() {
+<span class="fc" id="L29">        return idCaixa;</span>
+    }
+
+    public void setValorCaixa(double valorCaixa) throws Exception {
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (valorCaixa &gt;= 0) {</span>
+<span class="fc" id="L34">            this.valorCaixa = valorCaixa;</span>
+        } else {
+<span class="fc" id="L36">            throw new Exception(&quot;Valor Invalido&quot;);</span>
+        }
+<span class="fc" id="L38">    }</span>
+
+    public void setDataCaixa(Date dataCaixa) throws Exception {
+<span class="fc" id="L41">        Date dt = new Date();</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (dataCaixa.after(dt)) {</span>
+<span class="fc" id="L43">            throw new Exception(&quot;Data Invalida&quot;);</span>
+        } else {
+<span class="fc" id="L45">            this.dataCaixa = dataCaixa;</span>
+        }
+<span class="fc" id="L47">    }</span>
+
+    public void setIdCaixa(int idCaixa) throws Exception {
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (idCaixa &gt; 0) {</span>
+<span class="fc" id="L51">            this.idCaixa = idCaixa;</span>
+        } else {
+<span class="fc" id="L53">            throw new Exception(&quot;ID Invalido&quot;);</span>
+        }
+<span class="fc" id="L55">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

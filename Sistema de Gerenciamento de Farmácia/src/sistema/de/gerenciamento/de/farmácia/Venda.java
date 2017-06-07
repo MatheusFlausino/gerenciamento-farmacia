@@ -37,7 +37,7 @@ public class Venda {
 
     public void setTipoPagVenda(String tipoPagVenda) throws Exception {
         if (tipoPagVenda.isEmpty()) {
-            throw new Exception("Nome Invalido");
+            throw new Exception("Pagamento Invalido");
         } else {
             this.tipoPagVenda = tipoPagVenda;
         }
@@ -61,7 +61,7 @@ public class Venda {
     }
 
     public void setTotalVenda(double totalVenda) throws Exception {
-        if (idCliente > 0) {
+        if (totalVenda > 0) {
             this.totalVenda = totalVenda;
         } else {
             throw new Exception("Valor Invalido");
@@ -73,7 +73,7 @@ public class Venda {
     }
 
     public void setDescontoVenda(double descontoVenda) throws Exception {
-        if (idCliente >= 0) {
+        if (descontoVenda >= 0) {
             this.descontoVenda = descontoVenda;
         } else {
             throw new Exception("Desconto Invalido");
@@ -85,7 +85,7 @@ public class Venda {
     }
 
     public void setIdCliente(int idCliente) throws Exception {
-        if (idCliente >= 0) {
+        if (idCliente > 0) {
             this.idCliente = idCliente;
         } else {
             throw new Exception("ID Invalido");

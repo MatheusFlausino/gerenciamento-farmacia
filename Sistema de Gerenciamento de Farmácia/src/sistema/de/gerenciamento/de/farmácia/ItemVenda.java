@@ -24,7 +24,7 @@ public class ItemVenda {
         if (IdProduto > 0) {
             this.IdProduto = IdProduto;
         } else {
-            throw new Exception("Preco Invalido");
+            throw new Exception("ID Invalido");
         }
     }
 
@@ -36,7 +36,7 @@ public class ItemVenda {
         if (IdVenda.length() > 0) {
             this.IdVenda = IdVenda;
         } else {
-            throw new Exception("Preco Invalido");
+            throw new Exception("ID Invalido");
         }
     }
 

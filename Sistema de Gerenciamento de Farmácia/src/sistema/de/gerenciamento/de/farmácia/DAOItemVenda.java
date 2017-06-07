@@ -65,12 +65,12 @@ public class DAOItemVenda {
         return resultados;
     }
 
-    public ItemVenda buscar(int id) throws Exception {
+    public ItemVenda buscar(String id) throws Exception {
         ItemVenda resultados = null;
         try {
             conectar();
             try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM itemvenda WHERE idVenda LIKE ? LIMIT 1")) {
-                stmt.setInt(1, id);
+                stmt.setString(1, id);
                 ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
                     ItemVenda temp = new ItemVenda();
@@ -92,7 +92,7 @@ public class DAOItemVenda {
 
     public boolean insere(ItemVenda novoItemVenda) throws Exception {
         boolean retorno = false;
-        String sql = "INSERT INTO itemvenda (idProduto, precoProduto, nomeProduto, idVenda, qtdProduto)" + 
+        String sql = "INSERT INTO itemvenda(idProduto,precoProduto,nomeProduto,idVenda,qtdProduto)" + 
                 "VALUES(?,?,?,?,?)";
 
         try {
