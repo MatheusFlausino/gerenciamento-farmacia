@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 09, 2017 at 09:10 
+-- Generation Time: Jun 07, 2017 at 04:51 
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `engsoft`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `caixa`
+--
+
+CREATE TABLE `caixa` (
+  `id` int(11) NOT NULL,
+  `data` varchar(30) NOT NULL,
+  `valor` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `caixa`
+--
+
+INSERT INTO `caixa` (`id`, `data`, `valor`) VALUES
+(1, '2000-02-21', 100),
+(2, '2017-02-12', 12),
+(3, '2000-02-21', 100);
 
 -- --------------------------------------------------------
 
@@ -47,7 +68,8 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`nome`, `cpf`, `cep`, `logradouro`, `bairro`, `telefone`, `id`, `numero`, `complemento`, `cidade`, `estado`, `datanasc`) VALUES
 ('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 1, 120, ' ', 'Cornélio Procópio', 'Paraná', '2000-02-21'),
-('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 2, 120, ' ', 'Cornélio Procópio', 'Paraná', '1995-02-12');
+('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 2, 120, ' ', 'Cornélio Procópio', 'Paraná', '1995-02-12'),
+('Fulano pra teste', '46200045609', '86300000', 'ABC', 'Centro', '11976548165', 10, 120, ' ', 'Cornélio Procópio', 'Paraná', '2000-02-21');
 
 -- --------------------------------------------------------
 
@@ -67,10 +89,8 @@ CREATE TABLE `estoque` (
 --
 
 INSERT INTO `estoque` (`id`, `qtd`, `idFornecedor`, `idProduto`) VALUES
-(1, 40, 1, 1),
-(2, 11, 0, 1),
-(9, 40, 1, 2),
-(10, 40, 1, 2);
+(1, 40, 1, 2),
+(3, 40, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -98,7 +118,31 @@ CREATE TABLE `fornecedor` (
 
 INSERT INTO `fornecedor` (`nome`, `cnpj`, `cep`, `logradouro`, `bairro`, `telefone`, `id`, `numero`, `complemento`, `cidade`, `estado`) VALUES
 ('Fulano pra teste', '72223484000149', '86300000', 'ABC', 'Centro', '11976548165', 1, 120, ' ', 'Cornélio Procópio', 'Paraná'),
-('Fulano pra teste', '72223484000149', '86300000', 'ABC', 'Centro', '11976548165', 2, 120, ' ', 'Cornélio Procópio', 'Paraná');
+('Fulano pra teste', '72223484000149', '86300000', 'ABC', 'Centro', '11976548165', 2, 120, ' ', 'Cornélio Procópio', 'Paraná'),
+('Fulano pra teste', '72223484000149', '86300000', 'ABC', 'Centro', '11976548165', 3, 120, ' ', 'Cornélio Procópio', 'Paraná');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `itemvenda`
+--
+
+CREATE TABLE `itemvenda` (
+  `id` int(11) NOT NULL,
+  `idVenda` varchar(60) NOT NULL,
+  `idProduto` int(11) NOT NULL,
+  `nomeProduto` varchar(45) NOT NULL,
+  `qtdProduto` int(11) NOT NULL,
+  `precoProduto` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `itemvenda`
+--
+
+INSERT INTO `itemvenda` (`id`, `idVenda`, `idProduto`, `nomeProduto`, `qtdProduto`, `precoProduto`) VALUES
+(11, 'eb694f395f2d976f9f10b92a91d86a80', 1, 'Pomada', 12, 17.14),
+(18, 'asld123adsf34', 1, 'Qualquer produto', 2, 17.2);
 
 -- --------------------------------------------------------
 
@@ -119,11 +163,41 @@ CREATE TABLE `produto` (
 
 INSERT INTO `produto` (`id`, `nome`, `fabricante`, `preco`) VALUES
 (1, 'Pomada', 'Um Fabricante', 17.14),
-(2, 'talco', 'Um Fabricante', 17.14);
+(5, 'Pomada', 'Um Fabricante', 17.14),
+(11, 'Pomada', 'Um Fabricante', 17.14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `venda`
+--
+
+CREATE TABLE `venda` (
+  `idVenda` varchar(60) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `dataVenda` varchar(30) NOT NULL,
+  `tipoPagamento` varchar(20) NOT NULL,
+  `descontoVenda` double NOT NULL,
+  `totalVenda` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `venda`
+--
+
+INSERT INTO `venda` (`idVenda`, `idCliente`, `dataVenda`, `tipoPagamento`, `descontoVenda`, `totalVenda`) VALUES
+('asld123adsf34', 1, '2000-02-21', 'Dinheiro', 0, 124),
+('eb694f395f2d976f9f10b92a91d86a80', 11, '2017-06-04', 'Cartão Debito', 0, 205.68);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `caixa`
+--
+ALTER TABLE `caixa`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `cliente`
@@ -144,11 +218,32 @@ ALTER TABLE `fornecedor`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `itemvenda`
+--
+ALTER TABLE `itemvenda`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `venda`
+--
+ALTER TABLE `venda`
+  ADD PRIMARY KEY (`idVenda`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `itemvenda`
+--
+ALTER TABLE `itemvenda`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
