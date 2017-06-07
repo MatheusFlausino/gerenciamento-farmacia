@@ -82,9 +82,14 @@ public final class formCliente extends javax.swing.JFrame {
         jLabel2.setLabelFor(logradouroCliente);
         jLabel2.setText("Logradouro");
 
-        numeroCliente.setText("jTextField1");
+        numeroCliente.setText(" ");
 
         complementoCliente.setText("jTextField1");
+        complementoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                complementoClienteActionPerformed(evt);
+            }
+        });
 
         jLabel4.setLabelFor(complementoCliente);
         jLabel4.setText("Complemento");
@@ -202,9 +207,9 @@ public final class formCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -237,6 +242,10 @@ public final class formCliente extends javax.swing.JFrame {
                                     .addComponent(buscarCliente))
                                 .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(tituloCliente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(salvarCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(atualizarCliente)
@@ -244,10 +253,9 @@ public final class formCliente extends javax.swing.JFrame {
                         .addComponent(excluirCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(reset)
-                        .addGap(70, 70, 70)
-                        .addComponent(exit))
-                    .addComponent(tituloCliente))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(exit)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {atualizarCliente, buscarCliente, excluirCliente, exit, reset, salvarCliente});
@@ -304,14 +312,14 @@ public final class formCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(telefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(salvarCliente)
                     .addComponent(atualizarCliente)
                     .addComponent(excluirCliente)
                     .addComponent(exit)
                     .addComponent(reset))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -397,6 +405,10 @@ public final class formCliente extends javax.swing.JFrame {
     private void cpfClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cpfClienteActionPerformed
+
+    private void complementoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_complementoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_complementoClienteActionPerformed
 
     /**
      * @param args the command line arguments

@@ -30,8 +30,10 @@ public class MainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButtonSair = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         novo = new javax.swing.JMenu();
         novoCliente = new javax.swing.JMenuItem();
@@ -42,24 +44,9 @@ public class MainForm extends javax.swing.JFrame {
         gerenciarFornecedor = new javax.swing.JMenuItem();
         gerenciarProduto = new javax.swing.JMenuItem();
         estoque = new javax.swing.JMenu();
-        exit = new javax.swing.JMenu();
-        sairSistema = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciamento de Farmácia");
-
-        jPanel1.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
-        );
 
         jButton1.setText("Vender");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +54,20 @@ public class MainForm extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jButtonSair.setText("Sair");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setDisplayedMnemonic('F');
+        jLabel2.setFont(new java.awt.Font("Algerian", 3, 24)); // NOI18N
+        jLabel2.setText("Farmácia ");
+
+        jLabel1.setFont(new java.awt.Font("Algerian", 3, 24)); // NOI18N
+        jLabel1.setText("master");
 
         novo.setText("Novo");
 
@@ -132,46 +133,39 @@ public class MainForm extends javax.swing.JFrame {
         });
         jMenuBar1.add(estoque);
 
-        exit.setText("Sair");
-        exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
-            }
-        });
-
-        sairSistema.setText("Sair do Sistema");
-        sairSistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sairSistemaActionPerformed(evt);
-            }
-        });
-        exit.add(sairSistema);
-
-        jMenuBar1.add(exit);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(61, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
             .addGroup(layout.createSequentialGroup()
-                .addGap(234, 234, 234)
+                .addContainerGap()
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSair)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(71, 71, 71))
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSair)
+                    .addComponent(jButton1))
+                .addContainerGap())
         );
 
         pack();
@@ -224,11 +218,6 @@ public class MainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_novoFornecedorActionPerformed
 
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-
-        System.exit(0);
-    }//GEN-LAST:event_exitActionPerformed
-
     private void novoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoProdutoActionPerformed
         // TODO add your handling code here:
         formProduto form;
@@ -240,10 +229,6 @@ public class MainForm extends javax.swing.JFrame {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_novoProdutoActionPerformed
-
-    private void sairSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairSistemaActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_sairSistemaActionPerformed
 
     private void gerenciarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarProdutoActionPerformed
         formProduto form;
@@ -277,6 +262,10 @@ public class MainForm extends javax.swing.JFrame {
             Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,18 +304,18 @@ public class MainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu estoque;
-    private javax.swing.JMenu exit;
     private javax.swing.JMenu gerenciar;
     private javax.swing.JMenuItem gerenciarCliente;
     private javax.swing.JMenuItem gerenciarFornecedor;
     private javax.swing.JMenuItem gerenciarProduto;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonSair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu novo;
     private javax.swing.JMenuItem novoCliente;
     private javax.swing.JMenuItem novoFornecedor;
     private javax.swing.JMenuItem novoProduto;
-    private javax.swing.JMenuItem sairSistema;
     // End of variables declaration//GEN-END:variables
 }
